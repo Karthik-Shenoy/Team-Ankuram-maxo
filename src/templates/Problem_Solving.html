@@ -1,5 +1,73 @@
+<!DOCTYPE html>
 <html>
+	<head>
+		<link rel = "stylesheet" href = "static/css/style_PSF.css">
+	</head>
 	<body>
-		<h1>Hello</h1>
+		<div class = "row">
+
+			<div class = "column">
+				<section class = "center-pane">
+				{% for problem in problems %}
+					<div class = "card">
+						<div class = "card-text">
+							<h2>{{problem.name}}</h2>
+							<p>Difficulty : {{problem.difficulty}}, Topic : {{problem.topic}}</p>
+						</div>
+						<div class = "problem-solve-button">
+							<button class = "solve-button">Solve Problem</button>
+						</div>
+					</div>
+				{% endfor %}
+				</section>
+			</div>
+
+			<div class = "column">
+				<section class = "right-pane">
+					<div class = "difficulty-selecter">
+						<h2>Difficulty</h2>
+						<input type="checkbox" id="Easy" name="Easy" value="">
+						<label for="Easy">Easy</label><br>
+
+						<input type="checkbox" id="Medium" name="Medium" value="">
+						<label for="Medium">Medium</label><br>
+
+						<input type="checkbox" id="Hard" name="Hard" value="">
+						<label for="Hard">Hard</label><br>
+					</div>
+					<div>
+						<h2>Sub-Domains</h2>
+						<input type="checkbox" id="Time-Complexity" name="Time-Complexity" value="">
+						<label for="Time-Complexity">Time-Complexity</label><br>
+
+						<input type="checkbox" id="Sorting" name="Sorting" value="">
+						<label for="Sorting">Sorting</label><br>
+
+						<input type="checkbox" id="Complete-Search" name="Complete-Search" value="Boat">
+						<label for="Complete-Search">Complete-Search</label><br>
+
+						<input type="checkbox" id="Greedy-Algorithms" name="Greedy-Algorithms" value="">
+						<label for="Greedy-Algorithms">Greedy-Algorithms</label><br>
+
+						<input type="checkbox" id="Dynamic-Programming" name="Dynamic-Programming" value="">
+						<label for="Dynamic-Programming">Dynamic-Programming</label><br>
+
+						<input type="checkbox" id="Amortized-Analysis" name="Amortized-Analysis" value="">
+						<label for="Amortized-Analysis">Amortized-Analysis</label><br>
+
+						<input type="checkbox" id="Range-Queries" name="Range-Queries" value="">
+						<label for="Range-Queries">Range-Queries</label><br>
+
+						<input type="checkbox" id="Bit-Manipulation" name="Bit-Manipulation" value="">
+						<label for="Bit-Manipulation">Bit-Manipulation</label><br>
+
+					</div>
+					<div>
+						
+					</div>
+				</section>
+			</div>
+
+		</div>
 	</body>
 </html>
