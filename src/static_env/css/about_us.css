@@ -1,0 +1,58 @@
+/*
+HTML 5 Template Name: 
+File: About Us - 5 CSS
+Author: OS Templates
+Author URI: https://www.os-templates.com/
+Licence: <a href="https://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+#about-us{display:block; width:100%; line-height:1.6em;}
+
+#about-us #tabcontainer{margin-bottom:50px;}
+#tabcontainer ul#tabnav{display:block; margin:0; padding:0; list-style:none; text-transform:uppercase; border-bottom:1px solid #CCCCCC;}
+#tabcontainer ul#tabnav li{display:inline; margin:0 2px 0 0; padding:0;}
+#tabcontainer ul#tabnav li:first-child{margin-left:0;}
+
+/* --jQuery Specific-- */
+
+#container .ui-tabs .ui-tabs-nav li a{display:inline-block; margin:0 0 -1px 0; padding:10px 20px; color:#333333; background-color:#E2E2E2; border-bottom:1px solid #CCCCCC;}
+#container .ui-tabs .ui-tabs-nav li a:hover, #container .ui-tabs .ui-tabs-nav li.ui-tabs-active a{color:#E2E2E2; background-color:#333333; border-color:#333333;}
+#container .ui-tabs .ui-tabs-nav li.ui-tabs-active a{cursor:default;}
+
+/* CSS3 Elements Only Work In Latest Browsers */
+
+#container .ui-tabs .ui-tabs-nav li a{
+	/* Rounded Corners */
+	-moz-border-radius:8px 8px 0 0;
+	-webkit-border-radius:8px 8px 0 0;
+	-khtml-border-radius:8px 8px 0 0;
+	border-radius:8px 8px 0 0;
+	}
+
+#about-us #tabcontainer .tabcontainer{display:block; width:100%; margin:0; padding:20px 0 0 0;}
+#about-us #tabcontainer .tabcontainer .imgholder, #about-us #tabcontainer .tabcontainer .imgr, #about-us #tabcontainer .tabcontainer .imgl{margin-bottom:0; padding:9px;}
+#about-us #tabcontainer .tabcontainer h2{}
+#about-us #tabcontainer .tabcontainer p{}
+
+#about-us #team{margin-bottom:50px;}
+#about-us #team ul{margin:0; padding:0; list-style:none;}
+#about-us #team ul li{}
+#about-us #team ul li figure{}
+#about-us #team ul li figure img{padding:9px; border:1px solid #CCCCCC;}
+#about-us #team ul li figure figcaption{}
+#about-us #team ul li figure figcaption p{margin:15px 0 0 0; padding:0;}
+#about-us #team ul li figure figcaption .fl_left{width:255px;}
+#about-us #team ul li figure figcaption .fl_left .team_name{font-weight:bold;}
+#about-us #team ul li figure figcaption .fl_left .team_title{margin:0; font-size:11px; line-height:normal;}
+#about-us #team ul li figure figcaption .fl_left .team_description{padding-top:15px; line-height:1.4em; border-top:1px solid #CCCCCC;}
+#about-us #team ul li figure figcaption ul{float:right; clear:right; margin-top:15px;}
+#about-us #team ul li figure figcaption ul li{margin:5px 0 0 0;}
+#about-us #team ul li figure figcaption ul li:first-child{margin-top:0;}
+#about-us #team ul li figure figcaption ul li a{}
+#about-us #team ul li figure figcaption ul li a img{padding:0; border:none;}
+
+#about-us #client_logos{margin:0;}
+#about-us #client_logos ul{margin:0; padding:0; list-style:none;}
+#about-us #client_logos ul li{}
+#about-us #client_logos ul li:first-child{margin-left:0;}
+#about-us #client_logos ul li img{}

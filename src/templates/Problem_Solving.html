@@ -1,9 +1,11 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel = "stylesheet" href = "static/css/style_PSF.css">
-	</head>
-	<body>
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block specif_style  %}
+<link rel="stylesheet" href="{% static 'css/style_PSF.css' %}">
+{% endblock specif_style  %}
+
+{% block content %}
 		<div class = "row">
 
 			<div class = "column">
@@ -69,5 +71,5 @@
 			</div>
 
 		</div>
-	</body>
-</html>
+	
+{% endblock content %}
