@@ -5,7 +5,8 @@ import os
 # Create your views here.
 def Problem_Solving_View(request, *args, **kwargs):
 	BASE_DIR = Path(__file__).resolve().parent.parent
-	loc = os.path.join(BASE_DIR, '\\test\\DB.txt')
+	loc = "C:\\Users\\keert\\Desktop\\Team-Ankuram-maxo\\src\\Pages\\DB.txt"
+	print(loc) 
 	file = open(loc, 'r')
 	problems = []
 	for line in file:
@@ -21,3 +22,7 @@ def Login_View(request, *args, **kwargs):
 
 def About_Us_View(request, *args, **kwargs):
 	return render(request, 'About_us.html',{})
+
+
+def blank(request):
+	return render(request, 'blank.html')

@@ -1,140 +1,111 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-} 
- html {
-  box-sizing: border-box;
-}
- 
- 
-* {
-  box-sizing: border-box;
-}
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
+{% extends 'layout.html' %}
+{% load static %}
 
-.column {
-  float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
+{% block specif_style  %}
+<link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+{% endblock specif_style  %}
 
-.about-us {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-</style>
-</head>
-
-<body>
-<div class = "about-us">
-<h1>ABOUT US </h1>
-<p></p>
-</div>
-   <h2 style= "text-align: center">OUR TEAM </h2>
-      <div class = "row">
-        <div class = "column">
-          <div class = "card">
-            <img src = "static/Images/Ananth.jpg" alt= "Ananth" width="100%">
-               <div class = "container">
-                   <h2>ANANTH G PRABHU</h2>
-                      <p>Email : <a href = "mailto:ananthgprabhu17k205@gmail.com">mailto:ananthgprabhu17k205@gmail.com</a></p>
-                         <p>Contact: 8088193224</p>
-               </div>
-          </div>
+{% block content %}
+<div class= "column">
+ <section id="main">
+    <div class="container-about" >
+      <article id="main-col">
+        <h1 class="page-title", text-align="center">ABOUT US</h1>  
+        <p>Hello, welcome to Abc. Extremely glad you’re here. Have you ever been frustrated/discouraged while looking out for a bunch of aptitude questions? Were the level of questions not able to meet your expectations? Ever felt the need of an associate to discuss and clear your doubts? This portal has been designed to guide you through this strenuous journey and pave an easier path for the destination.</p>
+        <p class="dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium rerum vero aut qui aperiam deserunt neque nobis et facere! Ipsum, necessitatibus vel totam pariatur provident placeat quos maiores deserunt beatae.</p>
+      </article>
+      
+      <aside id="sidebar">
+        <div class="dark">
+        <h3>What We Do</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat laboriosam in necessitatibus, dolore aspernatur quidem sunt rerum debitis.</p>
         </div>
-        <div class = "column">
-          <div class = "card">
-            <img src = "static/Images/damodar.jpeg" alt= "Damodar" width="100%">
-               <div class = "container">
-                   <h2>DAMODAR PRABHU K</h2>
-                      <p>Email : <a href = "mailto:Damshallwin23@gmail.com">Damshallwin23@gmail.com</a></p>
-                         <p>Contact: 6361574570</p>
-               </div>
-          </div>
-        </div>
-        <div class = "column">
-          <div class = "card">
-            <img src = "static/Images/Karthik.jpeg" alt= "Karthik" width="100%">
-               <div class = "container">
-                   <h2>KARTHIK SHENOY K</h2>
-                      <p>Email : <a href = "mailto:karthikshenoy2001@gmail.com">karthikshenoy2001@gmail.com</a></p>
-                         <p>Contact: 9686463111</p>
-               </div>
-          </div>
-        </div>
-        </div>
-        <div class = "row">
-        <div class = "column">
-          <div class = "card">
-            <img src = "static/Images/Kavita Kamath~2.jpg" alt= "Kavita" width="100%">
-               <div class = "container">
-                   <h2>KAVITA KAMATH</h2>
-                      <p>Email : <a href = "mailto:kamathkavita07@gmail.com">kamathkavita07@gmail.com</a></p>
-                         <p>Contact: 8105206737</p>
-               </div>
-          </div>
-        </div>
-        <div class = "column">
-           <div class = "card">
-                <img src = "static/Images/IMG_-jul2be.jpg" alt= "keerthi" width="100%">
-                    <div class = "container">
-                       <h2>KEERTHI KAMATH</h2>
-                       <p>Email : <a href = "mailto: keerthikamath91@gmail.com">keerthikamath91@gmail.com</a></p>
-                               <p>Contact:  9980869307</p>
-                    </div>
-           </div>
-        </div>         
-        <div class = "column">
-          <div class = "card">
-          <img src = "static/Images/MY PIC.jpeg" alt= "Sucheta" width="100%">
-                       <div class = "container">
-                          <h2>SUCHETA SHANBHAG</h2>
-                              <p>Email : <a href = "mailto:shanbhagsucheta@gmail.com">shanbhagsucheta@gmail.com</a></p>
-                                  <p>Contact: 6363707379</p>
-                       </div>
-           </div>
-        </div>   
-        </div>
-  <div class = "row">
-  <div class = "column">
-    <div class = "card">
-      <img src = "static/Images/vaishnavi.jpeg" alt= "Vaishanavi" width="100%">
-         <div class = "container">
-             <h2>VAISHNAVI SALVANKAR</h2>
-                <p>Email : <a href = "mailto:salvankarvaishnavi@gmail.com">salvankarvaishnavi@gmail.com</a></p>
-                   <p>Contact: 7625086031</p>
-         </div>
+     </aside>
     </div>
+  </section>
+<div class="column">
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center">OUR TEAM </h2>
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="our-team">
+            <div class="picture">
+              <img class="img-fluid" src="{% static 'Images/Ananth.jpg' %}">
+            </div>
+            <div class="team-content">
+              <h3 class="name">Ananth G Prabhu</h3>
+              <h4 class="title">Front-End Developer</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="our-team">
+            <div class="picture">
+              <img class="img-fluid" src="{% static 'Images/Damodar.jpg' %}">
+            </div>
+            <div class="team-content">
+              <h3 class="name">Damodar</h3>
+              <h4 class="title">Front-End Developer</h4>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-12">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="{% static 'Images/Karthik.jpeg' %}">
+          </div>
+          <div class="team-content">
+            <h3 class="name">Karthik Shenoy</h3>
+            <h4 class="title">Front-End Developer</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="{% static 'Images/Kavita.jpg' %}">
+          </div>
+          <div class="team-content">
+            <h3 class="name">Kavita Kamath</h3>
+            <h4 class="title">Front-End Developer</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="{% static 'Images/Keerthi.jpg' %}">
+          </div>
+          <div class="team-content">
+            <h3 class="name">Keerthi Kamath</h3>
+            <h4 class="title">Front-End Developer</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 col-12">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="{% static 'Images/Sucheta.jpeg' %}">
+          </div>
+          <div class="team-content">
+            <h3 class="name">Sucheta Shanbhag</h3>
+            <h4 class="title">Front-End Developer</h4>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-6 col-12">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="{% static 'Images/Vaishnavi.jpeg' %}">
+          </div>
+          <div class="team-content">
+            <h3 class="name">Vaishnavi Slavankar</h3>
+            <h4 class="title">Front-End Developer</h4>
+        </div>
+      </div>
+    </div>
+    </div>
+    
   </div>
-  </div>
-
-</div>
-</div>
-</body>
-</html>
+  
+{% endblock content %}
