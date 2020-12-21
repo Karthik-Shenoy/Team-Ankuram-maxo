@@ -56,8 +56,87 @@ Hello, welcome to Abc. Extremely glad you’re here. Have you ever been frustrat
 <a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>
 
 * [Bootstrap](https://getbootstrap.com)
-* [HTML]
-* [CSS]
+* HTML
+* CSS
 * [Python](https://www.python.org/downloads/)
 * [Django](https://www.djangoproject.com/)
 
+<!-- GETTING STARTED -->
+## Getting Started
+
+### Prerequisites
+
+1. Fork and Clone
+    <ol>
+    <li>Fork sushiksha-website the Repo</li>
+    <li>Clone the repo to you computer.</li>
+    </ol>
+
+2. Create a Virtual Environment for the Project
+
+    In Windows
+    ```bash
+    python -m venv venv
+    
+    venv\Scripts\activate
+    ```
+
+    In Ubuntu/MacOS
+    ```bash
+    python -m virtualenv venv
+    
+    source venv/bin/activate
+    ```
+   
+   If you are giving a different name then `venv`, then please mention it in `.gitigonre` first
+   
+   3. Install all the requirements
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+   
+   ### Installation
+   
+
+
+  4. Checkout to develop branch
+       ```git
+      git status
+      git pull
+      git branch
+      git checkout develop
+      ```
+
+  5. Create a `setting.py` in `sushiksha-website/djangoProject/`
+
+      Copy paste the code from below document to `settings.py`
+
+      settings.py
+
+      Change the config parameters,
+      ```python
+
+     SECRET_KEY = 'Enter random character string'
+     EMAIL_USER = 'your email username'
+     EMAIL_PASS = 'Enter you email password'
+
+      ```
+
+  6. Make migrations/ Create db.sqlite3
+
+      ```bash
+      python manage.py makemigrations
+      python manage.py migrate
+      ```
+  7. Create a super user.
+      In django if you want to access admin page, you need to create an account first.
+      ```djangotemplate
+      python manage.py createsuperuser
+      ```
+     Then select your username and password.
+
+  8. Run server
+      ```bash
+      python manage.py runserver
+      ```
