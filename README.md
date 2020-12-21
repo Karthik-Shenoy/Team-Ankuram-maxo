@@ -44,3 +44,20 @@
     <li><a href="#acknowledgements">Acknowledgements</a></li>
   </ol>
 </details>
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+Hello, welcome to Abc. Extremely glad you’re here. Have you ever been frustrated/discouraged while looking out for a bunch of aptitude questions? Were the level of questions not able to meet your expectations? Ever felt the need of an associate to discuss and clear your doubts? This portal has been designed to guide you through this strenuous journey and pave an easier path for the destination.
+
+### Built With
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
+<a href="http://www.djangoproject.com/"><img src="https://www.djangoproject.com/m/img/badges/djangopowered126x54.gif" border="0" alt="Powered by Django." title="Powered by Django." /></a>
+
+* [Bootstrap](https://getbootstrap.com)
+* [HTML]
+* [CSS]
+* [Python](https://www.python.org/downloads/)
+* [Django](https://www.djangoproject.com/)
+
