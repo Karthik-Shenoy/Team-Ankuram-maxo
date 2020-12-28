@@ -66,7 +66,7 @@ Hello, welcome to Abc. Extremely glad you’re here. Have you ever been frustrat
 
 1. Fork and Clone
     <ol>
-    <li>Fork sushiksha-website the Repo</li>
+    <li>Fork the Team-Ankuram-maxo Repo</li>
     <li>Clone the repo to you computer.</li>
     </ol>
 
@@ -97,37 +97,15 @@ Hello, welcome to Abc. Extremely glad you’re here. Have you ever been frustrat
 ### Installation
    
 
-
   4. Checkout to develop branch
        ```git
       git status
       git pull
       git branch
       git checkout develop
-      ```
-
-  5. Create a `setting.py` in `sushiksha-website/djangoProject/`
-
-      Copy paste the code from below document to `settings.py`
-
-      settings.py
-
-      Change the config parameters,
-      ```python
-
-     SECRET_KEY = 'Enter random character string'
-     EMAIL_USER = 'your email username'
-     EMAIL_PASS = 'Enter you email password'
-
-      ```
-
-  6. Make migrations/ Create db.sqlite3
-
-      ```bash
-      python manage.py makemigrations
-      python manage.py migrate
-      ```
-  7. Create a super user.
+     
+     
+  6. Create a super user.
       In django if you want to access admin page, you need to create an account first.
       ```djangotemplate
       python manage.py createsuperuser
