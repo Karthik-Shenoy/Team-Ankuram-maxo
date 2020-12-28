@@ -1,0 +1,3 @@
+django
+pyrebase
+google-cloud-firestore
