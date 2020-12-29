@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block specif_style  %}
+<link rel="stylesheet" href="{% static 'css/Resources.css' %}">
+{% endblock specif_style  %}
+
+{% block content %}
+	<div class="main">
+
+		<div class="cards">
+			<div class="image">
+				<img src="{{site.image_link}}">
+			</div>
+			<div class="title">
+				<h1>{{site.title}}</h1>
+				<button>Click here</button>
+
+			</div>
+
+			</div>
+
+	</div>
+{% endblock content %}
+
