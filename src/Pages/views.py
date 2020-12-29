@@ -95,5 +95,11 @@ def Aptitude_View(request, *args, **kwargs):
 def Home_View(request, *args, **kwargs):
 	return render(request, 'home.html', {})
 
+def Reset_Page_View(request, *args, **kwargs):
+	resetEmail = request.POST['ResetEmail']
+	auth.generate_password_reset_link(resetEmail)
+	return render(request, 'resetid.html', {})
+
+
 def Resources(request, *args):
 	return
