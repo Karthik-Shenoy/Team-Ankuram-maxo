@@ -7,5 +7,6 @@ urlpatterns = [
 	path('aboutus/', views.About_Us_View),
     path('postsignin/', views.Post_Signin_View),
     path('aptitude/', views.Aptitude_View),
-    path('home/', views.Home_View)
+    path('home/', views.Home_View),
+    path('chatbot/', views.ChatBot)
 ]
