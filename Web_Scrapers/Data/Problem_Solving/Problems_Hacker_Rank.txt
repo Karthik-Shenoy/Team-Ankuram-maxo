@@ -1,0 +1,60 @@
+Hackerland Radio Transmitters,Medium,Searching,https://www.hackerrank.com//challenges/hackerland-radio-transmitters
+Gridland Metro,Medium,Searching,https://www.hackerrank.com//challenges/gridland-metro
+Ice Cream Parlor,Easy,Searching,https://www.hackerrank.com//challenges/icecream-parlor
+KnightL on a Chessboard,Medium,Searching,https://www.hackerrank.com//challenges/knightl-on-chessboard
+Minimum Loss,Medium,Searching,https://www.hackerrank.com//challenges/minimum-loss
+Missing Numbers,Easy,Searching,https://www.hackerrank.com//challenges/missing-numbers
+Pairs,Medium,Searching,https://www.hackerrank.com//challenges/pairs
+Sherlock and Array,Easy,Searching,https://www.hackerrank.com//challenges/sherlock-and-array
+Maximum Subarray Sum,Hard,Searching,https://www.hackerrank.com//challenges/maximum-subarray-sum
+Connected Cells in a Grid,Medium,Searching,https://www.hackerrank.com//challenges/connected-cell-in-a-grid
+Big Sorting,Easy,Sorting,https://www.hackerrank.com//challenges/big-sorting
+Intro to Tutorial Challenges,Easy,Sorting,https://www.hackerrank.com//challenges/tutorial-intro
+Insertion Sort - Part 1,Easy,Sorting,https://www.hackerrank.com//challenges/insertionsort1
+Insertion Sort - Part 2,Easy,Sorting,https://www.hackerrank.com//challenges/insertionsort2
+Correctness and the Loop Invariant,Easy,Sorting,https://www.hackerrank.com//challenges/correctness-invariant
+Running Time of Algorithms,Easy,Sorting,https://www.hackerrank.com//challenges/runningtime
+Quicksort 1 - Partition,Easy,Sorting,https://www.hackerrank.com//challenges/quicksort1
+Counting Sort 1,Easy,Sorting,https://www.hackerrank.com//challenges/countingsort1
+Counting Sort 2,Easy,Sorting,https://www.hackerrank.com//challenges/countingsort2
+The Full Counting Sort,Medium,Sorting,https://www.hackerrank.com//challenges/countingsort4
+The Coin Change Problem,Medium,Dynamic-Programming,https://www.hackerrank.com//challenges/coin-change
+Equal,Medium,Dynamic-Programming,https://www.hackerrank.com//challenges/equal
+Sherlock and Cost,Medium,Dynamic-Programming,https://www.hackerrank.com//challenges/sherlock-and-cost
+Construct the Array,Medium,Dynamic-Programming,https://www.hackerrank.com//challenges/construct-the-array
+Kingdom Division,Medium,Dynamic-Programming,https://www.hackerrank.com//challenges/kingdom-division
+Sam and substrings,Medium,Dynamic-Programming,https://www.hackerrank.com//challenges/sam-and-substrings
+Fibonacci Modified,Medium,Dynamic-Programming,https://www.hackerrank.com//challenges/fibonacci-modified
+Abbreviation,Medium,Dynamic-Programming,https://www.hackerrank.com//challenges/abbr
+Prime XOR,Medium,Dynamic-Programming,https://www.hackerrank.com//challenges/prime-xor
+Decibinary Numbers,Hard,Dynamic-Programming,https://www.hackerrank.com//challenges/decibinary-numbers
+Minimum Absolute Difference in an Array,Easy,Greedy-Algorithms,https://www.hackerrank.com//challenges/minimum-absolute-difference-in-an-array
+Marc's Cakewalk,Easy,Greedy-Algorithms,https://www.hackerrank.com//challenges/marcs-cakewalk
+Grid Challenge,Easy,Greedy-Algorithms,https://www.hackerrank.com//challenges/grid-challenge
+Luck Balance,Easy,Greedy-Algorithms,https://www.hackerrank.com//challenges/luck-balance
+Maximum Perimeter Triangle,Easy,Greedy-Algorithms,https://www.hackerrank.com//challenges/maximum-perimeter-triangle
+Beautiful Pairs,Easy,Greedy-Algorithms,https://www.hackerrank.com//challenges/beautiful-pairs
+Candies,Medium,Greedy-Algorithms,https://www.hackerrank.com//challenges/candies
+Sherlock and The Beast,Easy,Greedy-Algorithms,https://www.hackerrank.com//challenges/sherlock-and-the-beast
+Priyanka and Toys,Easy,Greedy-Algorithms,https://www.hackerrank.com//challenges/priyanka-and-toys
+Largest Permutation,Easy,Greedy-Algorithms,https://www.hackerrank.com//challenges/largest-permutation
+Lonely Integer,Easy,Bit-Manipulation,https://www.hackerrank.com//challenges/lonely-integer
+Maximizing XOR,Easy,Bit-Manipulation,https://www.hackerrank.com//challenges/maximizing-xor
+Counter game,Medium,Bit-Manipulation,https://www.hackerrank.com//challenges/counter-game
+Xor-sequence,Medium,Bit-Manipulation,https://www.hackerrank.com//challenges/xor-se
+Sum vs XOR,Easy,Bit-Manipulation,https://www.hackerrank.com//challenges/sum-vs-xor
+The Great XOR,Medium,Bit-Manipulation,https://www.hackerrank.com//challenges/the-great-xor
+Flipping bits,Easy,Bit-Manipulation,https://www.hackerrank.com//challenges/flipping-bits
+Yet Another Minimax Problem,Medium,Bit-Manipulation,https://www.hackerrank.com//challenges/yet-another-minimax-problem
+Sansa and XOR,Medium,Bit-Manipulation,https://www.hackerrank.com//challenges/sansa-and-xor
+AND Product,Medium,Bit-Manipulation,https://www.hackerrank.com//challenges/and-product
+The Power Sum,Medium,Recursion,https://www.hackerrank.com//challenges/the-power-sum
+Crossword Puzzle,Medium,Recursion,https://www.hackerrank.com//challenges/crossword-puzzle
+Recursive Digit Sum,Medium,Recursion,https://www.hackerrank.com//challenges/recursive-digit-sum
+Simplified Chess Engine,Medium,Recursion,https://www.hackerrank.com//challenges/simplified-chess-engine
+Password Cracker,Medium,Recursion,https://www.hackerrank.com//challenges/password-cracker
+Arithmetic Expressions,Hard,Recursion,https://www.hackerrank.com//challenges/arithmetic-expressions
+Stone Division, Revisited,Medium,Recursion,https://www.hackerrank.com//challenges/stone-division-2
+K Factorization,Hard,Recursion,https://www.hackerrank.com//challenges/k-factorization
+Bowling Pins,Hard,Recursion,https://www.hackerrank.com//challenges/bowling-pins
+Simplified Chess Engine II,Hard,Recursion,https://www.hackerrank.com//challenges/simplified-chess-engine-ii
