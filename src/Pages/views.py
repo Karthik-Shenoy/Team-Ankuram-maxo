@@ -103,3 +103,6 @@ def Reset_Page_View(request, *args, **kwargs):
 
 def Resources(request, *args):
 	return
+
+def ChatBot(request, *args, **kwargs):
+	return render(request, "Chatbot.html", {})
