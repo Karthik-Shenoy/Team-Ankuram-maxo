@@ -30,13 +30,50 @@ auth = firebase.auth()
 dataBase = firebase.database()
 Fire_Store = firestore.Client()
 
+def valid(lst):
+	for x in lst:
+		if(x):
+			return True
+	return False
+
 # Create your views here.
 def Problem_Solving_View(request, *args, **kwargs):
 	problems_ref = Fire_Store.collection(u'Problems')
 	problems = []
-	for doc in problems_ref.stream():
-		problems.append(doc.to_dict())
-	
+
+	# difficulty_list #
+	difficulty_list = []
+	for x in range(1,4):
+		difficulty_list.append(request.POST.get("D"+str(x)))
+	# topic_list #
+	topic_list = []
+	for x in range(1,11):
+		topic_list.append(request.POST.get("T"+str(x)))
+	print(topic_list, valid(topic_list))
+	print(difficulty_list, valid(difficulty_list))
+
+
+	if(valid(topic_list) and valid(difficulty_list)):
+		for doc in problems_ref.stream():
+			problem = doc.to_dict()
+			if(problem['topic'] in topic_list and problem['difficulty'] in difficulty_list):
+				problems.append(problem)
+	elif(valid(topic_list)):
+		for doc in problems_ref.stream():
+			problem = doc.to_dict()
+			if(problem['topic'] in topic_list):
+				problems.append(problem)
+	elif(valid(difficulty_list)):
+		for doc in problems_ref.stream():
+			problem = doc.to_dict()
+			if(problem['difficulty'] in difficulty_list):
+				problems.append(problem)
+	else:
+		for doc in problems_ref.stream():
+			problems.append(doc.to_dict())
+			
+
+
 	return render(request, 'Problem_Solving.html',{"problems":problems})
 
 def Signin_View(request, *args, **kwargs):
