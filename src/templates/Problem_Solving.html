@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block specif_style  %}
-<link rel="stylesheet" href="{% static 'css/style_PSF.css' %}">
+<link rel="stylesheet" href="{% static 'css/problem.css' %}">
 {% endblock specif_style  %}
 
 {% block content %}
 		<div class = "row">
 
 			<div class = "column">
-				<section class = "center-pane">
+				<section class = "left-pane">
 				{% for problem in problems %}
 					<div class = "card">
 						<div class = "card-text">
