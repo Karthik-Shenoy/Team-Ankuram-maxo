@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Karthik-Shenoy/Team-Ankuram-maxo/blob/main/README.md">
-    <img src="https://firebasestorage.googleapis.com/v0/b/ankuram-maxo-website.appspot.com/o/Project_Git%2FAnkuram%20Logo.png?alt=media&token=ac69eb50-5050-408c-a058-e1fcb11f2487" alt="Logo" width="80" height="80">
+    <img src="https://firebasestorage.googleapis.com/v0/b/ankuram-maxo-website.appspot.com/o/Project_Git%2FAnkuram%20Logo.png?alt=media&token=ac69eb50-5050-408c-a058-e1fcb11f2487" alt="Logo" width="100" height="100">
   </a>
 
   <h3 align="center">Team-Ankuram</h3>
