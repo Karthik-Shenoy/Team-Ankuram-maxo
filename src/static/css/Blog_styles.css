@@ -139,6 +139,7 @@ a {
 	padding: 15px;
 }
 
+
 .content .main-content.single {
 	background: white;
 }
@@ -154,6 +155,22 @@ a {
 .content .side-bar .section.search {
 	margin:80px;
 
+}
+
+.content .main-content.single {
+	background: white;
+	padding:  20px 50px;
+	font-size: .5cm;
+	border-radius: 5px;
+
+  .content .sidebar{
+	width: 30%;
+	float: left;
+	height: 300px;
+}
+
+.content .sidebar.single{
+	padding: 0px 10px;
 }
 
 /* CONTENT */
