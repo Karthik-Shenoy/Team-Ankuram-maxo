@@ -1,0 +1,8 @@
+header {
+	background:	#00FFFF;
+}
+
+header .logo{
+	margin: 9px;
+	font-family: 'candal';
+}
