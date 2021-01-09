@@ -116,3 +116,39 @@ a {
 .content .main-content .recent-post-title {
 	margin: 20px;
 }
+
+.content .main-content .post {
+	background: white;
+	width: 95%;
+	height: 290px;
+	margin: 20px auto;
+	border-radius: 15px;
+	position: relative;
+}
+
+.content .main-content .post .read-more {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+.content .main-content .post .post-preview {
+	padding: 15px;
+}
+
+.content .main-content.single {
+	background: white;
+}
+
+.content .side-bar .section {
+	background: white;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+
+}
+
+.content .side-bar .section.search {
+	margin:80px;
+
+}
