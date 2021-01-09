@@ -31,3 +31,36 @@
 	color: white !important;
 	background: #005255;
 }
+
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+h1, h2, h3, h4{
+	font-family: Candal;
+	color: #444;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.page-wrapper a:hover{
+	color: #006669;
+}
+
+.post-slider .slider-title{
+	text-align: center;
+	margin: 30px auto;
+
+}
+
+.post-slider .post-wrapper{
+	width: 84%;
+	height: 350px;
+	margin: 0px auto;
+	overflow: hidden;
+}
