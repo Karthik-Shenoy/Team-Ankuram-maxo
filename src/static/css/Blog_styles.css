@@ -64,3 +64,35 @@ a {
 	margin: 0px auto;
 	overflow: hidden;
 }
+
+.post-slider .post-wrapper .post{
+	background: white;
+	display: inline-block;
+	height: 300px;
+	width: 350px;
+	margin: 0px 10px;
+	border-radius: 10px;
+	box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+
+.post-slider .post-wrapper .post .post-info{
+	padding: 10px;
+}
+
+.post-slider .next{
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	font-size: 2em;
+	color: #006669;
+	cursor: pointer;
+}
+
+.post-slider .prev{
+	position: absolute;
+	top: 50%;
+	left: 30px;
+	font-size: 2em;
+	color: #006669;
+	cursor: pointer;
+}
