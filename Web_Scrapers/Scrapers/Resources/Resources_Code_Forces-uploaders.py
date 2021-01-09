@@ -1,0 +1,9 @@
+Time-Complexity,https://codeforces.com/blog/entry/4825
+Sorting,https://codeforces.com/blog/entry/10751
+Complete-Search,https://codeforces.com/blog/entry/3745
+Greedy-Algorithms,https://codeforces.com/blog/entry/14032
+Dynamic-Programming,https://codeforces.com/blog/entry/67679
+Amortized-Analysis,https://codeforces.com/blog/entry/58528
+Range-Queries,https://codeforces.com/blog/entry/77128
+Bit-Manipulation,https://codeforces.com/blog/entry/21858
+Recursion,https://codeforces.com/blog/entry/64844
