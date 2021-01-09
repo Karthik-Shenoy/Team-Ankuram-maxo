@@ -1,0 +1,4 @@
+Table Charts,https://www.indiabix.com/data-interpretation/table-charts/
+Pie Charts,https://www.indiabix.com/data-interpretation/pie-charts/
+Bar Charts,https://www.indiabix.com/data-interpretation/bar-charts/
+Line Charts,https://www.indiabix.com/data-interpretation/line-charts/

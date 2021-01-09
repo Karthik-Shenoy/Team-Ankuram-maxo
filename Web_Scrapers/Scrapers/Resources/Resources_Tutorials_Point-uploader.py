@@ -1,0 +1,9 @@
+Time-Complexity,https://www.tutorialspoint.com/Algorithms-and-Complexities      
+Sorting,https://www.tutorialspoint.com/data_structures_algorithms/sorting_algorithms.htm
+Complete-Search,https://www.tutorialspoint.com/data_structures_algorithms/linear_search_algorithm.htm
+Greedy-Algorithms,https://www.tutorialspoint.com/introduction-to-greedy-algorithms
+Dynamic-Programming,https://www.tutorialspoint.com/data_structures_algorithms/dynamic_programming.htm
+Amortized-Analysis,https://www.tutorialspoint.com/Amortized-Analysis
+Range-Queries,https://www.tutorialspoint.com/array-range-queries-for-elements-with-frequency-same-as-value-in-c-program
+Bit-Manipulation,https://www.tutorialspoint.com/bits-manipulation-important-tactics-in-cplusplus
+Recursion,https://www.tutorialspoint.com/cprogramming/c_recursion.htm

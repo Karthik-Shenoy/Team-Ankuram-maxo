@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block specif_style  %}
+<link rel="stylesheet" href="{% static 'css/style_PSF.css' %}">
+{% endblock specif_style  %}
+
+{% block content %}
+		<div class = "row">
+
+			<div class = "column">
+				<section class = "center-pane">
+				{% for problem in problems %}
+					<div class = "card">
+						<div class = "card-text">
+							<h2>{{problem.title}}</h2>
+							<p>Topic : {{problem.topic}}</p>
+						</div>
+						<div class = "problem-solve-button">
+							<button class = "solve-button">Solve Problem</button>
+						</div>
+					</div>
+				{% endfor %}
+				</section>
+			</div>
+
+			<div class = "column">
+				<section class = "right-pane">
+					<h2>Sub-Domains</h2>
+						<input type="checkbox" id="Arithmatic-Aptitude" name="AT1" value="Arithmatic-Aptitude">
+						<label for="Time-Complexity">Arithmatic Aptitude</label><br>
+
+						<input type="checkbox" id="Data-Interpretation" name="AT2" value="Data-Interpretation">
+						<label for="Sorting">Data Interpretation</label><br>
+
+						<input type="checkbox" id="Non-Verbal-Reasoning" name="AT3" value="Non-Verbal-Reasoning">
+						<label for="Complete-Search">Non Verbal Reasoning</label><br>
+
+						<input type="checkbox" id="Logical-Reasoning" name="AT4" value="Logical-Reasoning">
+						<label for="Greedy-Algorithms">Logical Reasoning</label><br>
+
+						<input type="checkbox" id="Verbal-Reasoning" name="AT5" value="Verbal-Reasoning">
+						<label for="Dynamic-Programming">Verbal Reasoning</label><br>
+
+						<input type="checkbox" id="Verbal-Reasoning" name="AT6" value="Verbal-Reasoning">
+						<label for="Amortized-Analysis">Verbal Ability</label><br>
+
+						<button type="submit">SORT PROBLEMS</button>
+						</form>
+					</div>
+				</section>
+			</div>
+
+		</div>
+	
+{% endblock content %}

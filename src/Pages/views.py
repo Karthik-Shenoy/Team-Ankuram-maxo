@@ -30,13 +30,50 @@ auth = firebase.auth()
 dataBase = firebase.database()
 Fire_Store = firestore.Client()
 
+def valid(lst):
+	for x in lst:
+		if(x):
+			return True
+	return False
+
 # Create your views here.
 def Problem_Solving_View(request, *args, **kwargs):
 	problems_ref = Fire_Store.collection(u'Problems')
 	problems = []
-	for doc in problems_ref.stream():
-		problems.append(doc.to_dict())
-	
+
+	# difficulty_list #
+	difficulty_list = []
+	for x in range(1,4):
+		difficulty_list.append(request.POST.get("D"+str(x)))
+	# topic_list #
+	topic_list = []
+	for x in range(1,11):
+		topic_list.append(request.POST.get("T"+str(x)))
+	print(topic_list, valid(topic_list))
+	print(difficulty_list, valid(difficulty_list))
+
+
+	if(valid(topic_list) and valid(difficulty_list)):
+		for doc in problems_ref.stream():
+			problem = doc.to_dict()
+			if(problem['topic'] in topic_list and problem['difficulty'] in difficulty_list):
+				problems.append(problem)
+	elif(valid(topic_list)):
+		for doc in problems_ref.stream():
+			problem = doc.to_dict()
+			if(problem['topic'] in topic_list):
+				problems.append(problem)
+	elif(valid(difficulty_list)):
+		for doc in problems_ref.stream():
+			problem = doc.to_dict()
+			if(problem['difficulty'] in difficulty_list):
+				problems.append(problem)
+	else:
+		for doc in problems_ref.stream():
+			problems.append(doc.to_dict())
+			
+
+
 	return render(request, 'Problem_Solving.html',{"problems":problems})
 
 def Signin_View(request, *args, **kwargs):
@@ -88,9 +125,27 @@ def Post_Signin_View(request, *args, **kwargs):
 def About_Us_View(request, *args, **kwargs):
 	return render(request, 'About_us.html', {})
 
-
 def Aptitude_View(request, *args, **kwargs):
-	return render(request, 'Aptitude.html', {})
+	problems_ref = Fire_Store.collection(u'Problems')
+	problems = []
+
+	# topic_list #
+	topic_list = []
+	for x in range(1,6):
+		topic_list.append(request.POST.get("AT"+str(x)))
+	print(topic_list, valid(topic_list))
+
+
+	if(valid(topic_list)):
+		for doc in problems_ref.stream():
+			problem = doc.to_dict()
+			if(problem['topic'] in topic_list):
+				problems.append(problem)
+	else:
+		for doc in problems_ref.stream():
+			problems.append(doc.to_dict())
+			
+	return render(request, 'Aptitude_Problems_Page.html', {"problems":problems})
 
 def Home_View(request, *args, **kwargs):
 	return render(request, 'home.html', {})
@@ -100,6 +155,42 @@ def Reset_Page_View(request, *args, **kwargs):
 	auth.generate_password_reset_link(resetEmail)
 	return render(request, 'resetid.html', {})
 
+def Resources_View(request, *args):
+	resourceSites_ref = Fire_Store.collection(u'Resource_cards')
+	siteCards = []
+	for doc in resourceSites_ref.stream():
+		siteCards.append(doc.to_dict())
 
-def Resources(request, *args):
-	return
+	resourceTopics_ref = Fire_Store.collection(u'Resources_Topics')
+	resources = []
+	for doc in resourceTopics_ref.stream():
+		resource = doc.to_dict()
+		resources.append(resource)
+	print(resources)
+
+	if request.POST.get("GFG"):
+		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "GFG"})
+	
+	elif request.POST.get("TP"):
+		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "TP"})
+	
+	elif request.POST.get("CP"):
+		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "CP"})
+	
+	elif request.POST.get("W3"):
+		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "W3"})
+	
+	elif request.POST.get("CF"):
+		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "CF"})
+
+	return render(request, 'Resources.html', {"siteCards": siteCards})
+
+
+def ChatBot(request, *args, **kwargs):
+	return render(request, "Chatbot.html", {})
+
+def Post_Chat(request, *args, **kwargs):
+	msg = request.POST.get('userMsg')
+	print(msg)
+	redirect_chat = redirect('/chatbot/')
+	return redirect_chat

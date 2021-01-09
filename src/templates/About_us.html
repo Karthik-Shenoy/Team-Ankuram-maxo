@@ -1,115 +1,140 @@
 {% extends 'layout.html' %}
 {% load static %}
 
-{% block specif_style  %}
-<link rel="stylesheet" href="{% static 'css/about_us.css' %}">
+ 
+ {% block specif_style  %}
+ <link rel="stylesheet" href="{% static 'css/small-business.css' %}">
 {% endblock specif_style  %}
 
+  
+  
+
 {% block content %}
-<div class= "column">
- <section id="main">
-    <div class="container-about" >
-      <article id="main-col">
-        <h1 class="page-title", text-align="center">ABOUT US</h1>  
-        <p>Hello, welcome to Abc. Extremely glad you’re here. Have you ever been frustrated/discouraged while looking out for a bunch of aptitude questions? Were the level of questions not able to meet your expectations? Ever felt the need of an associate to discuss and clear your doubts? This portal has been designed to guide you through this strenuous journey and pave an easier path for the destination.</p>
-        <p class="dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium rerum vero aut qui aperiam deserunt neque nobis et facere! Ipsum, necessitatibus vel totam pariatur provident placeat quos maiores deserunt beatae.</p>
-      </article>
-      
-      <aside id="sidebar">
-        <div class="dark">
-        <h3>What We Do</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat laboriosam in necessitatibus, dolore aspernatur quidem sunt rerum debitis.</p>
-        </div>
-     </aside>
-    </div>
-  </section>
-<div class="column">
-  <div class="container">
-    <div class="row">
-      <h2 class="text-center">OUR TEAM </h2>
-        <div class="col-lg-3 col-md-6 col-12">
-          <div class="our-team">
-            <div class="picture">
-              <img class="img-fluid" src="{% static 'Images/Ananth.jpg' %}">
-            </div>
-            <div class="team-content">
-              <h3 class="name">Ananth G Prabhu</h3>
-              <h4 class="title">Front-End Developer</h4>
-            </div>
-=======
-.about-us {
-  padding: 50px;
-  text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-</style>
-</head>
 
 <body>
 
-<div class = "about-us">
-<h1>ABOUT US </h1>
-<p>Hello, welcome to Abc. Extremely glad you’re here. Have you ever been frustrated/discouraged while looking out for a bunch of aptitude questions? Were the level of questions not able to meet your expectations? Ever felt the need of an associate to discuss and clear your doubts? This portal has been designed to guide you through this strenuous journey and pave an easier path for the destination.</p>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-<h3>OUR VALUES</h3>
+  <!-- Page Content -->
+  <div class="container">
 
-<p>We, the team of Abc, hereby comply with a certain set of values:
-We never stop learning.
-We work relentlessly to produce fruitful results.
-Customer satisfaction is our first priority.
-We ensure that we make enough time to help others achieve their goals.</p>
-
-<h3>WHAT DO WE DO?</h3>
-
-<p>Placements season is the time which requires a rigorous approach to improve your aptitude skills for the job opportunities. Getting through the aptitude test is the first step during the placements. Since you have to compete with people of similar intellectual level as yours, you need to keep your fundamentals strong and practice a lot for better speed, accuracy and confidence. Abc provides you a wide range of resources, ranging from quantitative aptitude to logical reasoning, and data interpretation to verbal reasoning.
-A programmer should always look for ways to improve his/her programming skills. His success as a programmer depends on his ability to learn and adapt. We, at Abc, ensure to supply you with timeless techniques for continuous development. We bring before you plenty of learning resources that are only a click away, so you don't have to waste your time on various sites.</p>
-
-<p>To make the process of learning much simpler, we also have an interactive platform for the students. Collaborative efforts can help students to share diverse perspectives, develop new approaches to solve problems and receive social support and encouragement at all times. Hence, this platform can be of great help to students to develop a set of skills that are increasingly important in the professional world.</p>
-
-<p>We work to establish a foundation of consistency, so that we can continue to adapt, experiment and grow. Creativity is what drives us and curiosity inspires us to transform.</p>
-
-<p>Feel free to reach out to us with any questions. We are always open to feedback and constructive criticism.   
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+        <img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'Images/Ankuram.png' %}"  alt="">
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        <h1 class="font-weight-light">Team Ankuram</h1>
+        <p>Hello, welcome to Abc. Extremely glad you’re here. Have you ever been frustrated/discouraged while looking out for a bunch of aptitude questions? Were the level of questions not able to meet your expectations? Ever felt the need of an associate to discuss and clear your doubts? This portal has been designed to guide you through this strenuous journey and pave an easier path for the destination.</p>
 </p>
-</div>
-   <h2 style= "text-align: center">OUR TEAM </h2>
-      <div class = "row">
-        <div class = "column">
-          <div class = "card">
-            <img src = "static/Images/Ananth.jpg" alt= "Ananth" width="100%">
-               <div class = "container">
-                   <h2>ANANTH G PRABHU</h2>
-                      <p>Email : <a href = "mailto:ananthgprabhu17k205@gmail.com">mailto:ananthgprabhu17k205@gmail.com</a></p>
-                         <p>Contact: 8088193224</p>
-               </div>
+        {% comment %} <a class="btn btn-primary" href="#">Call to Action!</a> {% endcomment %}
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary my-5 py-4 text-center">
+      <div class="card-body">
+        <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
+      </div>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Card One</h2>
+            <p class="card-text">We never stop learning. We work relentlessly to produce fruitful results.</p>
+          </div>
+          <div class="card-footer">
+            {% comment %} <a href="#" class="btn btn-primary btn-sm">More Info</a> {% endcomment %}
           </div>
         </div>
-        <div class="col-lg-3 col-md-6 col-12">
-          <div class="our-team">
-            <div class="picture">
-              <img class="img-fluid" src="{% static 'Images/Damodar.jpg' %}">
-            </div>
-            <div class="team-content">
-              <h3 class="name">Damodar</h3>
-              <h4 class="title">Front-End Developer</h4>
-            </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Card Two</h2>
+            <p class="card-text">Customer satisfaction is our first priority.</p>
           </div>
+          <div class="card-footer">
+            {% comment %} <a href="#" class="btn btn-primary btn-sm">More Info</a> {% endcomment %}
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+      <div class="col-md-4 mb-5">
+        <div class="card h-100">
+          <div class="card-body">
+            <h2 class="card-title">Card Three</h2>
+            <p class="card-text">We ensure that we make enough time to help others achieve their goals</p>
+          </div>
+          <div class="card-footer">
+            {% comment %} <a href="#" class="btn btn-primary btn-sm">More Info</a> {% endcomment %}
+          </div>
+        </div>
+      </div>
+      <!-- /.col-md-4 -->
+
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <div class="row">
+  <h1 class="text-center">OUR TEAM </h1>
+  <div class="col-lg-3 col-md-6 col-12">
+    <div class="our-team">
+        <div class="picture">
+            <img class="img-fluid" src="{% static 'Images/Ananth.jpg' %}">
+        </div>
+        <div class="team-content">
+            <h3 class="name">Ananth</h3>
+            <h4 class="title">Front-End Developer</h4>
+        </div>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-6 col-12">
+    <div class="our-team">
+      <div class="picture">
+        <img class="img-fluid" src="{% static 'Images/Damodar.jpg' %}">
+      </div>
+    <div class="team-content">
+        <h3 class="name">Damodar</h3>
+        <h4 class="title">Front-End Developer</h4>
+    </div>
+  </div>
         </div>
         <div class="col-lg-3 col-md-6 col-12">
         <div class="our-team">
@@ -169,5 +194,18 @@ A programmer should always look for ways to improve his/her programming skills. 
     </div>
     
   </div>
-  
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Sushiksha | Ankuram 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+
+ 
+
+</body>
+
 {% endblock content %}

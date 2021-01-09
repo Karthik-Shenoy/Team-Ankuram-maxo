@@ -6,20 +6,19 @@
 {% endblock specif_style  %}
 
 {% block content %}
-	<div class="main">
-
-		<div class="cards">
-			<div class="image">
+{% for site in siteCards %}
+		<div class="card">
+			<div class="card-image">
 				<img src="{{site.image_link}}">
 			</div>
-			<div class="title">
-				<h1>{{site.title}}</h1>
-				<button>Click here</button>
-
+			<div class="card-text">
+				<h2>{{site.title}}</h2>
 			</div>
-
-			</div>
-
-	</div>
+			<form method="POST">
+			{% csrf_token %}
+			<button name = "{{site.site}}" value = "{{ site.site }}">Click here</button>
+			</form>
+		</div>
+{% endfor %}
 {% endblock content %}
 
