@@ -6,3 +6,28 @@
 .post-slider{
 	position: relative;
 }
+
+.text-input {
+	padding: 0.7rem 1rem;
+	display: block;
+	width: 100%;
+	border-radius: 7px;
+	outline: none;
+	color: #444;
+	font-size: 1.2em;
+	line-height: 1.5rem;
+	font-family: Lora;
+	border: 1px solid #e0e0e0;
+}
+.btn {
+	padding: 0.5rem 1rem;
+	background: #006669;
+	color: white;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+}
+
+.btn:hover {
+	color: white !important;
+	background: #005255;
+}
