@@ -96,3 +96,23 @@ a {
 	color: #006669;
 	cursor: pointer;
 }
+
+.content {
+	width: 90%;
+	margin: 30px auto 30px;
+}
+
+.content .main-content {
+	width: 60%;
+	float: left;
+}
+
+.content .side-bar {
+	width: 40%;
+	float: left;
+	height: 300px;
+}
+
+.content .main-content .recent-post-title {
+	margin: 20px;
+}
