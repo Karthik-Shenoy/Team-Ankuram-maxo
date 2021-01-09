@@ -6,23 +6,37 @@ body {
     background: #f6f5f7;
     display: flex;
     align-items: center;
-    padding-top: 200px;
+    padding-top: 10px;
     font-weight: normal;
     justify-content: center;
 }
 
+.about-section {
+    padding: 120px;
+    padding-bottom: 700px;
+    text-align: center;
+    background-color: #474e5d;
+    color: white;
+    height: 10px;
+    padding-top: 700px;
+    text-align: justify;
+}
+
 body h1,
-h2,
 h3 {
     font-size: 20px;
     text-align: center;
     font-weight: bold;
 }
 
+body h2 {
+    font-size: 10px;
+}
+
 .our-team {
     padding-bottom: 15px;
     margin-bottom: 30px;
-    background-color: #f7f5ec;
+    background-color: #ffffff;
     text-align: center;
     overflow: hidden;
     position: relative;
