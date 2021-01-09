@@ -81,17 +81,34 @@ body {
     border: none;
 } */
 
-.right-pane {
-    width: 300px;
-    padding-left: 900px;
-    padding-top: 0px;
+#sidebar {
+    float: left;
+    padding: 13px 0 0 45px;
+    height: 1400px;
+    border-right: 1px solid #eee;
+    padding-top: 60px;
 }
 
+#sidebar h3 {
+    color: #262626;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 35px 0 10px 0;
+    letter-spacing: 1px;
+    clear: both;
+    font-style: "montserrat";
+}
 
-/* .row {
+.right-pane {
+    width: 300px;
+    padding-left: 10px;
+}
+
+.row {
     display: flex;
 }
 
 .column {
     flex: 50%;
-} */
+}
