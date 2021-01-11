@@ -186,6 +186,15 @@ def Resources_View(request, *args):
 	return render(request, 'Resources.html', {"siteCards": siteCards})
 
 
+def Blog_Page_View(request, *args, **kwargs):
+	return render(request, "Blog.html", {})
+
+def Blog_Single_View(request, *args, **kwargs):
+	return render(request, "blog-single.html", {})
+
+def Manage_Posts_View(request, *args, **kwargs):
+	return render(request, "Manage-Posts.html", {})
+
 def ChatBot(request, *args, **kwargs):
 	return render(request, "Chatbot.html", {})
 
