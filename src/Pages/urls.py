@@ -8,7 +8,8 @@ urlpatterns = [
     path('postsignin/', views.Post_Signin_View),
     path('aptitude/', views.Aptitude_View),
     path('home/', views.Home_View),
-    path('chatbot/', views.ChatBot),
+    path('blog/', views.Blog_Page_View),
     path('resources/', views.Resources_View),
-    path('postchat/', views.Post_Chat),
+    path('blog-single/', views.Blog_Single_View),
+    path('manage-posts/', views.Manage_Posts_View)
 ]
