@@ -1,158 +1,62 @@
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'css/admin.css' %}" />
+<link rel="stylesheet" href="{% static 'css/Blog_styles.css' %}" />
 <script src="https://kit.fontawesome.com/72a88f0ef8.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Candal" />
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lora" />
 
-<!-- Page Wrapper -->
-<div class = "page-wrapper">
+<title>Create-Post</title>
 
-	<!-- posts carosel -->
-	<div class = "post-slider">
-		<h1 class="slider-title">Trending Posts</h1>
-		<i class="fas fa-chevron-left prev"></i>
-		<i class="fas fa-chevron-right next"></i>
-		<div class = "post-wrapper">
-
-			<div class="post">
-				<div class="post-info">
-					<h1><a href="/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
+<!-- Admin-Page-Wrapper -->
+<div class = "admin-wrapper">
+	<!-- Admin-Content -->
+	<div class = "admin-content">
+		<div class="content">
+			<h2 class = "page-title">Edit Post</h2>
+			<form action="/manage-posts/" method="POST">
+				{% csrf_token %}
+				<div class = "edit-title">
+					<label>Title</label>
+					<input type = "text" class = text-input name = "title" value = "{{current_post.title}}"/>
 				</div>
-			</div>
-
-			<div class="post">
-				<div class="post-info">
-					<h1><a href="/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
+				<div class = "edit-body">
+					<label>Body</label>
+					<textarea name="body" id="body">{{current_post.body}}</textarea>
 				</div>
-			</div>
-
-			<div class="post">
-				<div class="post-info">
-					<h1><a href="/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
+				<div class = "create-select-topic">
+					<label>Choose Topic</label>
+					<select name = "topic">
+						<option Value = "Aptitude">Aptitude</option>
+						<option Value = "Problem-Solving">Problem-Solving</option>
+						<option Value = "Resources">Resources</option>
+					</select>
 				</div>
-			</div>
-
-			<div class="post">
-				<div class="post-info">
-					<h1><a href="/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
+				<div>
+					<button type = "submit" class= "btn btn-big">Publish Post</button>
 				</div>
-			</div>
-
-			<div class="post">
-				<div class="post-info">
-					<h1><a href="/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
-				</div>
-			</div>
-
+				{% if messages %}
+                    {% for message in messages %}
+                        {% if message.extra_tags == "INVALID_BLOG_DATA" %}
+                        <div class="error-msg">
+                            <p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+			</form>
 		</div>
 	</div>
-	<!-- // posts carosel -->
-
-	<!-- content -->
-	<div class = "content clearfix">
-
-		<!-- main content -->
-		<div class = "main-content">
-			<h1 class = "recent-post-title">Recent Posts</h1>
-
-			<div class = "post">
-				<div class="post-preview">
-					<h1><a href = "/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
-					<p class = "previw-text">A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument</p>
-					<a href = "/blog-single/" class = "btn read-more">Read More</a>
-				</div>
-			</div>
-
-			<div class = "post">
-				<div class="post-preview">
-					<h1><a href = "/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
-					<p class = "previw-text">A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument</p>
-					<a href = "/blog-single/" class = "btn read-more">Read More</a>
-				</div>
-			</div>
-
-			<div class = "post">
-				<div class="post-preview">
-					<h1><a href = "/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
-					<p class = "previw-text">A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument</p>
-					<a href = "/blog-single/" class = "btn read-more">Read More</a>
-				</div>
-			</div>
-
-			<div class = "post">
-				<div class="post-preview">
-					<h1><a href = "/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
-					<p class = "previw-text">A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument</p>
-					<a href = "/blog-single/" class = "btn read-more">Read More</a>
-				</div>
-			</div>
-
-			<div class = "post">
-				<div class="post-preview">
-					<h1><a href = "/blog-single/">How to face interviews and solve coding problems</a></h1>
-					<i class = "far fa-user"> Karthik Shenoy</i>
-					&nbsp;
-					<i class = "far fa-calendar"> Jan 8, 2021</i>
-					<p class = "previw-text">A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument</p>
-					<a href = "/blog-single/" class = "btn read-more">Read More</a>
-				</div>
-			</div>
-
-		</div>
-		<!-- // main content -->
-		<div class = "side-bar">
-			<div class = "section search">
-				<h2 class = "section-title">Search</h2>
-				<form method = "POST">
-					<input type = "text" name="search-term" class="text-input" placeholder = "Search...">
-				</form>
-			</div>
-
-			<div class = "section search">
-				<h2 class = "section-title">Topics</h2>
-				<ul>
-
-				</ul>
-			</div>
-		</div>
-	</div>
-	<!-- // content -->
+	<!-- // Admin-Content -->
 </div>
-<!-- // Page Wrapper -->
+<!-- // Admin-Page-Wrapper -->
 
 
 <!-- JQUERY --> 
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
-<!-- Slick Carousel --> 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<!-- C-K Editor -->
+<script src="https://cdn.ckeditor.com/ckeditor5/24.0.0/classic/ckeditor.js"></script>
+<!-- Custom Scripts --> 
 <script type="text/javascript" src="{% static 'js/scripts_Blog.js' %}"></script>
