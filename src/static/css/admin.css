@@ -1,5 +1,4 @@
 .admin-wrapper {
-	border: 1px solid red;
 	height: calc(100%-66px);
 }
 
@@ -42,6 +41,32 @@ th, td{
 	color: red;
 }
 
-.edit:hover {
-	
+.edit:hover, .delete:hover {
+	text-decoration: underline;
+}
+
+form > div {
+	margin: 1.5rem;
+}
+
+.btn {
+	width: 150px;
+	font-size:1.2rem;
+}
+
+label {
+	font-style: bold;
+}
+
+select {
+	width: 100%;
+  	font-family: Arial;
+  	height: 35px;
+  	font-size: 1rem;
+  	border: 1px solid grey;
+}
+
+.error-msg {
+	padding-right: 30px;
+	font-size: 1.5rem;
 }
