@@ -27,23 +27,25 @@
 			<div class = "column">
 				<section class = "right-pane">
 					<h2>Sub-Domains</h2>
+					<form action="/aptitude/" method="POST">
+						{% csrf_token %}
 						<input type="checkbox" id="Arithmatic-Aptitude" name="AT1" value="Arithmatic-Aptitude">
-						<label for="Time-Complexity">Arithmatic Aptitude</label><br>
+						<label for="Arithmatic-Aptitude">Arithmatic Aptitude</label><br>
 
 						<input type="checkbox" id="Data-Interpretation" name="AT2" value="Data-Interpretation">
-						<label for="Sorting">Data Interpretation</label><br>
+						<label for="Data-Interpretation">Data Interpretation</label><br>
 
 						<input type="checkbox" id="Non-Verbal-Reasoning" name="AT3" value="Non-Verbal-Reasoning">
-						<label for="Complete-Search">Non Verbal Reasoning</label><br>
+						<label for="Non-Verbal-Reasoning">Non Verbal Reasoning</label><br>
 
 						<input type="checkbox" id="Logical-Reasoning" name="AT4" value="Logical-Reasoning">
-						<label for="Greedy-Algorithms">Logical Reasoning</label><br>
+						<label for="Logical-Reasoning">Logical Reasoning</label><br>
 
 						<input type="checkbox" id="Verbal-Reasoning" name="AT5" value="Verbal-Reasoning">
-						<label for="Dynamic-Programming">Verbal Reasoning</label><br>
+						<label for="Verbal-Reasoning">Verbal Reasoning</label><br>
 
-						<input type="checkbox" id="Verbal-Reasoning" name="AT6" value="Verbal-Reasoning">
-						<label for="Amortized-Analysis">Verbal Ability</label><br>
+						<input type="checkbox" id="Verbal-Ability" name="AT6" value="Verbal-Ability">
+						<label for="Verbal-Ability">Verbal Ability</label><br>
 
 						<button type="submit">SORT PROBLEMS</button>
 						</form>

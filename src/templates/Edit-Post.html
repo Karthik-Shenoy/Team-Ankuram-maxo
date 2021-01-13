@@ -14,7 +14,7 @@
 	<div class = "admin-content">
 		<div class="content">
 			<h2 class = "page-title">Edit Post</h2>
-			<form action="/manage-posts/" method="POST">
+			<form action="{% url 'blog_edit' blog_id=current_post.Blog_id %}" method="POST">
 				{% csrf_token %}
 				<div class = "edit-title">
 					<label>Title</label>
