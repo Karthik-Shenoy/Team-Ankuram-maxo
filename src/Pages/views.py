@@ -218,7 +218,7 @@ def Reset_Page_View(request, *args, **kwargs):
 	auth.generate_password_reset_link(resetEmail)
 	return render(request, 'resetid.html', {})
 
-def Resources_View(request, *args):
+def Resources_View(request, val, *args):
 	if(not check_key(request.session, 'uid')):
 		return redirect("/non-user/")
 	else:

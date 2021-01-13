@@ -7,6 +7,9 @@
 
 {% block content %}
 {% for site in siteCards %}
+		<script type="text/javascript">
+			var url = "{% url 'resources' val=site.site %}";
+		</script>
 		<div class="card">
 			<div class="card-image">
 				<img src="{{site.image_link}}">
@@ -14,10 +17,7 @@
 			<div class="card-text">
 				<h2>{{site.title}}</h2>
 			</div>
-			<form method="POST">
-			{% csrf_token %}
-			<button name = "{{site.site}}" value = "{{ site.site }}">Click here</button>
-			</form>
+			<button onclick="location.href=url">Click here</button>
 		</div>
 {% endfor %}
 {% endblock content %}

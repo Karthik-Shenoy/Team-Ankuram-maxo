@@ -9,7 +9,7 @@ urlpatterns = [
     path('aptitude/', views.Aptitude_View),
     path('home/', views.Home_View),
     path('blog/', views.Blog_Page_View),
-    path('resources/', views.Resources_View),
+    path('resources/<val>', views.Resources_View, name="resources"),
     path('blog-single/<blog_id>/', views.Blog_Single_View, name="blog_single"),
     path('edit-post/<blog_id>/', views.Edit_Post_View, name="blog_edit"),
     path('delete-post/<blog_id>/', views.Delete_Post, name="blog_delete"),
