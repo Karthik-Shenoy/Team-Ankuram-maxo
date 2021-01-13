@@ -25,13 +25,14 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = KeyFile_Path
 #inititalizing firestore and database
 Fire_Store = firestore.Client()
 #File = open(str(BASE_DIR)+"\\Web_Scrapers\\Data\\Problem_Solving\\Problems_Hacker_Rank.txt", 'r')
-File = open("E:\\Team-Ankuram-maxo\\Web_Scrapers\\aptitude.txt")
+File = open("E:\\maxo-project\\Team-Ankuram-maxo\\Web_Scrapers\\Data\\Aptitude\\Verbal_reasoning.txt")
 
-num = 1
+num = 114
 for line in File:
 	#data = {u"Name": user_name, u"Status": '1', u"Uid":uid}
 	#Fire_Store.collection(u'user').document(uid).set(data)
 	raw = line.split(',')
-	data = {u"title": raw[0], u"topic": "Aptitude", u"link": raw[3]}
+	data = {u"title": raw[0], u"topic": "Verbal-Reasoning", u"link": raw[1]}
 	Fire_Store.collection(u'Aptitude_Problems').document("Problem-"+str(num)).set(data)
 	num+=1
+print(num)
