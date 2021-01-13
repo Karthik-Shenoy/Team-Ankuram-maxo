@@ -191,44 +191,20 @@
               <div class="col-12">
                 <div class="single-main">
                   <!-- News Title -->
-                  <h1 class="news-title"><a href="news-single.html">More than 80 clinical trials launch to test of the coronavirus .</a></h1>
+                  <h1 class="news-title"><a href="news-single.html">{{current_post.title}}</a></h1>
                   <!-- Meta -->
                   <div class="meta">
                     <div class="meta-left">
-                      <span class="author"><i class = "far fa-user"></i>Karthik Shenoy</span>
-                      <span class="date"><i class="fa fa-clock-o"></i>03 Feb 2019</span>
+                      <span class="author"><i class = "far fa-user"></i>{{current_post.User_Name}}</span>
+                      <span class="date"><i class="fa fa-clock-o"></i>{{current_post.time_stamp}}</span>
                     </div>
                     <div class="meta-right">
-                      <span class="comments"><a href="#"><i class="fa fa-comments"></i>05 Comments</a></span>
-                      <span class="views"><i class="fa fa-eye"></i>33K Views</span>
+                      <span class="comments"><a href="#"><i class="fa fa-comments"></i>comments :  {{current_post.comments}}</a></span>
                     </div>
                   </div>
                   <!-- News Text -->
                   <div class="news-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam.</p>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam. Nam ac risus vitae sem vehicula egestas. Sed velit nulla, viverra non commod</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam.</p>
-                    <blockquote class="overlay">
-                      <p>Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam. Nam ac risus vitae sem vehicula egestas. Sed velit nulla, viverra non commodo et, sodales</p>          
-                    </blockquote>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse porttitor nunc a sodales tempor. Mauris sed felis maximus, interdum metus vel, tincidunt diam. Nam ac risus vitae sem vehicula egestas. Sed velit nulla, viverra non commodo et, sodales id dui.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse facilisis ultricies tortor, nec sollicitudin lorem sagittis vitae. Curabitur rhoncus commodo rutrum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam nec lacus pulvinar, laoreet dolor quis, pellentesque ante. Cras nulla orci, pharetra at dictum consequat, pretium pretium nulla. Suspendisse</p>
-                  </div>
-                  <div class="blog-bottom">
-                    <!-- Social Share -->
-                    <ul class="social-share">
-                      <li class="facebook"><a href="#"><i class="fa fa-facebook"></i><span>Facebook</span></a></li>
-                      <li class="twitter"><a href="#"><i class="fa fa-twitter"></i><span>Twitter</span></a></li>
-                      <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                      <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                      <li class="pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                    </ul>
-                    <!-- Next Prev -->
-                    <ul class="prev-next">
-                      <li class="prev"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
-                      <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
-                    </ul>
-                    <!--/ End Next Prev -->
+                    {{current_post.body | safe}}
                   </div>
                 </div>
               </div>
@@ -238,6 +214,17 @@
       <h2>All Comments</h2>
       <div class="comments-body">
   <!-- Single Comments -->
+  {% for comment in current_comments %}
+  <div class="single-comments">
+    <div class="main">
+      <div class="body">
+        <h4>{{comment.User_Name}}</h4>
+        <div class="comment-meta"><span class="meta"><i class="fa fa-calendar"></i>{{comment.date}}</span><span class="meta"><i class="fa fa-clock-o"></i>{{comment.time}}</span></div>
+        {{comment.data}}
+      </div>
+    </div>
+  </div> 
+  {% endfor %}
   <div class="single-comments">
     <div class="main">
       <div class="body">
@@ -278,12 +265,13 @@
   <div class="comments-form">
   <h2>Leave Comments</h2>
   <!-- Contact Form -->
-  <form class="form" method="post" action="mail/mail.php">
+  <form class="form" method="POST" action="{% url 'blog_single' blog_id=current_post.Blog_id %}">
+    {% csrf_token %}
     <div class="row">
       <div class="col-12">
         <div class="form-group message">
           <i class="fa fa-pencil"></i>
-          <textarea name="message" rows="7" placeholder="Type Your Message Here" ></textarea>
+          <textarea name="message" rows="10" placeholder="Type Your Message Here" ></textarea>
         </div>
       </div>
       <div class="col-12">

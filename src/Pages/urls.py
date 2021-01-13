@@ -10,6 +10,8 @@ urlpatterns = [
     path('home/', views.Home_View),
     path('blog/', views.Blog_Page_View),
     path('resources/', views.Resources_View),
-    path('blog-single/', views.Blog_Single_View),
-    path('manage-posts/', views.Manage_Posts_View)
+    path('blog-single/<blog_id>/', views.Blog_Single_View, name="blog_single"),
+    path('manage-posts/', views.Manage_Posts_View),
+    path('create-post/', views.Create_Post_View),
+    path('logout/', views.logout, name='log')
 ]

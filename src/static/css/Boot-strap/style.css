@@ -4149,3 +4149,18 @@ body{
 /*=========================
 	End Footer CSS
 ===========================*/
+
+/* custom css */
+.news-text blockquote {
+	position:relative;
+}
+.news-text blockquote:before {
+	position:absolute;
+	content:"";
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	background:#1a76d1;
+	opacity:0.8;
+}
