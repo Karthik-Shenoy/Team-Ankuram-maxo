@@ -33,8 +33,8 @@
 						<tr>
 							<td>{{ forloop.counter }}</td>
 							<td>{{ post.title }}</td>
-							<td><a href = "#" class="edit">Edit</a></td>
-							<td><a href = "#" class = "delete">Delete</a></td>
+							<td><a href = "{% url 'blog_edit' blog_id=post.Blog_id %}" class="edit">Edit</a></td>
+							<td><a href = "{% url 'blog_delete' blog_id=post.Blog_id %}" class = "delete">Delete</a></td>
 						</tr>
 
 					{% endfor %}

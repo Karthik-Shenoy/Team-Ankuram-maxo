@@ -114,7 +114,6 @@ def Signin_View(request, *args, **kwargs):
 
 def Post_Signin_View(request, *args, **kwargs):
 	#login_code
-	print(1)
 	email = request.POST.get('signInEmail')
 	password = request.POST.get('signInPassword')
 	redirect_signin = redirect('/signin/')
@@ -135,16 +134,15 @@ def Post_Signin_View(request, *args, **kwargs):
 	new_email = request.POST.get('signUpEmail')
 	new_password = request.POST.get('signUpPassWord')
 
-	print(new_email, new_password)
 	if(new_email and new_password):
 		try:
 			user = auth.create_user_with_email_and_password(new_email, new_password)
 
 			#adding the user into the database
 			uid = user['localId']
-			data = {u"Name": user_name, u"Status": '1', u"Uid":uid}
+			data = {u"Name": user_name, u"Status": True, u"Uid":uid}
 
-			Fire_Store.collection(u'user').document(uid).set(data)
+			Fire_Store.collection(u'Users').document(uid).set(data)
 		except Exception as e:
 			messages.error(request, "Email already exists", extra_tags = "EMAIL_ALREADY_EXISTS")
 			return redirect_signin
@@ -287,11 +285,35 @@ def Manage_Posts_View(request, *args, **kwargs):
 	user_uid = request.session['uid'] 
 	Blog_Posts = Fire_Store.collection(u'Blog-Posts')
 	users_posts = []
-	for post in Blog_Posts:
+	for post in Blog_Posts.stream():
 		Blog_Post = post.to_dict()
 		if(user_uid == Blog_Post["Uid"]):
 			users_posts.append(Blog_Post)	
 	return render(request, "Manage-Posts.html", {"Posts": users_posts})
+
+def Edit_Post_View(request, blog_id, *args, **kwargs):
+	# access the respective blog using its id #
+	curr_post = Fire_Store.collection(u'Blog-Posts').document(blog_id).get()
+	curr_post = curr_post.to_dict()
+	# /////////////////////////////////////// #
+	edited_title = request.POST.get("title")
+	edited_body = request.POST.get("body")
+	edited_topic = request.POST.get("topic")
+	if edited_body and edited_title:
+		curr_post["body"] = edited_body
+		curr_post["title"] = edited_title
+		curr_post["topic"] = edited_topic
+		Fire_Store.collection(u'Blog-Posts').document(blog_id).set(curr_post)
+		return HttpResponseRedirect("/edit-post/"+blog_id)
+	else:
+		messages.error(request, "Enter the required fields", extra_tags = "INVALID_BLOG_DATA")
+	 
+
+	return render(request, "Edit-Post.html", {"current_post": curr_post})
+
+def Delete_Post(request, blog_id, *args, **kwargs):
+	Fire_Store.collection(u'Blog-Posts').document(blog_id).delete()
+	return redirect("/manage-posts/")
 
 def Create_Post_View(request, *args, **kwargs):
 	title = request.POST.get("title")
@@ -311,8 +333,9 @@ def Create_Post_View(request, *args, **kwargs):
 		gen_id = uuid.uuid1()
 		date = time_stamp[:13]
 		time = ctime(time_stamp.split()[3])
-		Blog_Post = {"title": str(title), "body": str(body), "time_stamp": str(time_stamp), "User_Name":user_name, "Uid": user_uid, "Blog_id": str(gen_id.hex), "comments": 0, "date": date, "time": time}
+		Blog_Post = {"title": str(title), "body": str(body), "time_stamp": str(time_stamp), "User_Name":user_name, "Uid": user_uid, "Blog_id": str(gen_id.hex), "comments": 0, "date": date, "time": time, "topic": topic}
 		Fire_Store.collection(u'Blog-Posts').document(str(gen_id.hex)).set(Blog_Post)
+		return HttpResponseRedirect("/create-post/")
 	else:
 		messages.error(request, "Enter the required fields", extra_tags = "INVALID_BLOG_DATA")
 	# // Posting the Blog #
