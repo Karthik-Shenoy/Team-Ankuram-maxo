@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block specif_style  %}
+<link rel="stylesheet" href="{% static 'css/style_PSF.css' %}">
+{% endblock specif_style  %}
+
+{% block content %}
+		<div class = "row">
+
+			<div class = "column">
+				<section class = "center-pane">
+				{% for resource in resources  %}
+					{% if resource.site == val %}
+						<div class = "card">
+							<div class = "card-text">
+								<h2>{{resource.title}}</h2>
+							</div>
+							<div class = "resource-solve-button">
+								<button class = "solve-button">Solve resource</button>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+				</section>
+			</div>
+		</div>
+	
+{% endblock content %}

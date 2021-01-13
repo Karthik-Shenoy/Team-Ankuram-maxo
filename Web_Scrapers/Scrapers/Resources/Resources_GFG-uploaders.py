@@ -1,0 +1,9 @@
+Time-Complexity,https://www.geeksforgeeks.org/understanding-time-complexity-simple-examples/
+Sorting,https://www.geeksforgeeks.org/sorting-algorithms/
+Complete-Search,https://www.geeksforgeeks.org/searching-algorithms/
+Greedy-Algorithms,https://www.geeksforgeeks.org/greedy-algorithms/
+Dynamic-Programming,https://www.geeksforgeeks.org/dynamic-programming/
+Amortized-Analysis,https://www.geeksforgeeks.org/analysis-algorithm-set-5-amortized-analysis-introduction/
+Range-Queries,https://www.geeksforgeeks.org/array-data-structure/array-range-queries/
+Bit-Manipulation,https://www.geeksforgeeks.org/bits-manipulation-important-tactics/
+Recursion,https://www.geeksforgeeks.org/recursion/
