@@ -40,6 +40,12 @@ def valid(lst):
 			return True
 	return False
 
+def check_key(dic, item):
+	if item in dic:
+		return True
+	else:
+		return False
+
 def Today():
 	months = {"01": "Jan", "02": "Feb", "03": "Mar", "04": "Apr", "05": "May", "06": "Jun", "07": "Jul", "08": "Aug", "09": "Sep", "10": "Oct", "11": "Nov", "12": "Dec"}
 	now = datetime.now()
@@ -70,7 +76,15 @@ def trending_key(item):
 	return item['comments']
 
 # Create your views here.
+
+def Non_User_View(request, *args, **kwargs):
+	return render(request, "Pl-Signin.html", {})
+
 def Problem_Solving_View(request, *args, **kwargs):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
 	problems_ref = Fire_Store.collection(u'Problems')
 	problems = []
 
@@ -155,6 +169,10 @@ def Post_Signin_View(request, *args, **kwargs):
 	return redirect_home
 
 def logout(request):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
 	dj_auth.logout(request)
 	return redirect('/signin/')
 
@@ -162,12 +180,17 @@ def About_Us_View(request, *args, **kwargs):
 	return render(request, 'About_us.html', {})
 
 def Aptitude_View(request, *args, **kwargs):
-	problems_ref = Fire_Store.collection(u'Problems')
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
+
+	problems_ref = Fire_Store.collection(u'Aptitude_Problems')
 	problems = []
 
 	# topic_list #
 	topic_list = []
-	for x in range(1,6):
+	for x in range(1,7):
 		topic_list.append(request.POST.get("AT"+str(x)))
 	print(topic_list, valid(topic_list))
 
@@ -187,11 +210,19 @@ def Home_View(request, *args, **kwargs):
 	return render(request, 'home.html', {})
 
 def Reset_Page_View(request, *args, **kwargs):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
 	resetEmail = request.POST['ResetEmail']
 	auth.generate_password_reset_link(resetEmail)
 	return render(request, 'resetid.html', {})
 
 def Resources_View(request, *args):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
 	resourceSites_ref = Fire_Store.collection(u'Resource_cards')
 	siteCards = []
 	for doc in resourceSites_ref.stream():
@@ -202,7 +233,7 @@ def Resources_View(request, *args):
 	for doc in resourceTopics_ref.stream():
 		resource = doc.to_dict()
 		resources.append(resource)
-	print(resources)
+
 
 	if request.POST.get("GFG"):
 		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "GFG"})
@@ -223,18 +254,21 @@ def Resources_View(request, *args):
 
 
 def Blog_Page_View(request, *args, **kwargs):
-	user_uid = request.session['uid'] 
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
+
 	Blog_Posts = Fire_Store.collection(u'Blog-Posts')
 	previews = []
 	trending_posts = []
 	for post in Blog_Posts.stream():
 		Blog_Post = post.to_dict()
-		if(user_uid == Blog_Post["Uid"]):
-			date = Blog_Post["time_stamp"][:13]
-			time = ctime(Blog_Post["time_stamp"].split()[3])
-			preview = {"title": Blog_Post["title"], "p_text": Blog_Post["body"][:300], "time_stamp": Blog_Post["time_stamp"], "User_Name": Blog_Post["User_Name"], "Blog_id": Blog_Post["Blog_id"], "date": date, "time": time, "comments": Blog_Post["comments"]}
-			previews.append(preview)
-			trending_posts.append(Blog_Post)
+		date = Blog_Post["time_stamp"][:13]
+		time = ctime(Blog_Post["time_stamp"].split()[3])
+		preview = {"title": Blog_Post["title"], "p_text": Blog_Post["body"][:300], "time_stamp": Blog_Post["time_stamp"], "User_Name": Blog_Post["User_Name"], "Blog_id": Blog_Post["Blog_id"], "date": date, "time": time, "comments": Blog_Post["comments"]}
+		previews.append(preview)
+		trending_posts.append(Blog_Post)
 
 	previews.sort(key=recent_key, reverse=True)
 	trending_posts.sort(key=trending_key, reverse=True)
@@ -243,6 +277,10 @@ def Blog_Page_View(request, *args, **kwargs):
 	return render(request, "Blog.html", {"recent_posts": previews, "trending_posts": trending_posts})
 
 def Blog_Single_View(request, blog_id, *args, **kwargs):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
 	# access the respective blog using its id #
 	curr_post = Fire_Store.collection(u'Blog-Posts').document(blog_id).get()
 	curr_post = curr_post.to_dict()
@@ -282,6 +320,10 @@ def Blog_Single_View(request, blog_id, *args, **kwargs):
 
 
 def Manage_Posts_View(request, *args, **kwargs):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
 	user_uid = request.session['uid'] 
 	Blog_Posts = Fire_Store.collection(u'Blog-Posts')
 	users_posts = []
@@ -292,6 +334,10 @@ def Manage_Posts_View(request, *args, **kwargs):
 	return render(request, "Manage-Posts.html", {"Posts": users_posts})
 
 def Edit_Post_View(request, blog_id, *args, **kwargs):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
 	# access the respective blog using its id #
 	curr_post = Fire_Store.collection(u'Blog-Posts').document(blog_id).get()
 	curr_post = curr_post.to_dict()
@@ -299,12 +345,13 @@ def Edit_Post_View(request, blog_id, *args, **kwargs):
 	edited_title = request.POST.get("title")
 	edited_body = request.POST.get("body")
 	edited_topic = request.POST.get("topic")
+	print(edited_topic, edited_body)
 	if edited_body and edited_title:
 		curr_post["body"] = edited_body
 		curr_post["title"] = edited_title
 		curr_post["topic"] = edited_topic
 		Fire_Store.collection(u'Blog-Posts').document(blog_id).set(curr_post)
-		return HttpResponseRedirect("/edit-post/"+blog_id)
+		return HttpResponseRedirect("/manage-posts/")
 	else:
 		messages.error(request, "Enter the required fields", extra_tags = "INVALID_BLOG_DATA")
 	 
@@ -312,10 +359,18 @@ def Edit_Post_View(request, blog_id, *args, **kwargs):
 	return render(request, "Edit-Post.html", {"current_post": curr_post})
 
 def Delete_Post(request, blog_id, *args, **kwargs):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
 	Fire_Store.collection(u'Blog-Posts').document(blog_id).delete()
 	return redirect("/manage-posts/")
 
 def Create_Post_View(request, *args, **kwargs):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/non-user/")
+	else:
+		user_uid = request.session['uid']
 	title = request.POST.get("title")
 	body = request.POST.get("body")
 	topic = request.POST.get("topic")

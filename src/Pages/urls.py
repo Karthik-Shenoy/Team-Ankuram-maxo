@@ -15,5 +15,6 @@ urlpatterns = [
     path('delete-post/<blog_id>/', views.Delete_Post, name="blog_delete"),
     path('manage-posts/', views.Manage_Posts_View),
     path('create-post/', views.Create_Post_View),
-    path('logout/', views.logout, name='log')
+    path('logout/', views.logout, name='log'),
+    path('non-user/', views.Non_User_View),
 ]
