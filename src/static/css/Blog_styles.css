@@ -1,0 +1,184 @@
+.page-wrapper {
+	background: #F5F5F5;
+}
+
+/* Posts Slider */
+.post-slider{
+	position: relative;
+}
+
+.text-input {
+	padding: 0.7rem 1rem;
+	display: block;
+	width: 100%;
+	border-radius: 7px;
+	outline: none;
+	color: #444;
+	font-size: 1.2em;
+	line-height: 1.5rem;
+	font-family: Lora;
+	border: 1px solid #e0e0e0;
+}
+.btn {
+	padding: 0.5rem 1rem;
+	background: #006669;
+	color: white;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+}
+
+.btn:hover {
+	color: white !important;
+	background: #005255;
+}
+
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+h1, h2, h3, h4{
+	font-family: Candal;
+	color: #444;
+}
+
+.post-preview > h1 {
+	font-size: 1.5rem;
+}
+
+.post-info > h1 {
+	font-size: 1.5rem;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.page-wrapper a:hover{
+	color: #006669;
+}
+
+.post-slider .slider-title{
+	text-align: center;
+	margin: 30px auto;
+
+}
+
+.post-slider .post-wrapper{
+	width: 84%;
+	height: 350px;
+	margin: 0px auto;
+	overflow: hidden;
+}
+
+.post-slider .post-wrapper .post{
+	background: white;
+	display: inline-block;
+	height: 300px;
+	width: 350px;
+	margin: 0px 10px;
+	border-radius: 10px;
+	box-shadow: 1rem 1rem 1rem -1rem #a0a0a033;
+}
+
+.post-slider .post-wrapper .post .post-info{
+	padding: 10px;
+}
+
+.post-slider .next{
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	font-size: 2em;
+	color: #006669;
+	cursor: pointer;
+}
+
+.post-slider .prev{
+	position: absolute;
+	top: 50%;
+	left: 30px;
+	font-size: 2em;
+	color: #006669;
+	cursor: pointer;
+}
+/* Posts Slider */
+
+/* CONTENT */
+
+.content {
+	width: 90%;
+	margin: 30px auto 30px;
+}
+
+.content .main-content {
+	width: 60%;
+	float: left;
+}
+
+.content .side-bar {
+	width: 40%;
+	float: left;
+	height: 300px;
+}
+
+.content .main-content .recent-post-title {
+	margin: 20px;
+}
+
+.content .main-content .post {
+	background: white;
+	width: 95%;
+	height: 290px;
+	margin: 20px auto;
+	border-radius: 15px;
+	position: relative;
+}
+
+.content .main-content .post .read-more {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+.content .main-content .post .post-preview {
+	padding: 15px;
+}
+
+
+.content .main-content.single {
+	background: white;
+}
+
+.content .side-bar .section {
+	background: white;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+
+}
+
+.content .side-bar .section.search {
+	margin:80px;
+
+}
+
+.content .main-content.single {
+	background: white;
+	padding:  20px 50px;
+	font-size: .5cm;
+	border-radius: 5px;
+
+  .content .sidebar{
+	width: 30%;
+	float: left;
+	height: 300px;
+}
+
+.content .sidebar.single{
+	padding: 0px 10px;
+}
+
+/* CONTENT */

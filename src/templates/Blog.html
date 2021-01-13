@@ -1,0 +1,113 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/Blog_styles.css' %}" />
+<script src="https://kit.fontawesome.com/72a88f0ef8.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Candal" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lora" />
+
+<!-- Page Wrapper -->
+<div class = "page-wrapper">
+
+	<!-- posts carosel -->
+	<div class = "post-slider">
+		<h1 class="slider-title">Trending Posts</h1>
+		<i class="fas fa-chevron-left prev"></i>
+		<i class="fas fa-chevron-right next"></i>
+		<div class = "post-wrapper">
+
+			{% for post in trending_posts %}
+			<div class="post">
+				<div class="post-info">
+					<h1><a href="{% url 'blog_single' blog_id=post.Blog_id %}">{{post.title}}</a></h1>
+					<i class = "far fa-user"> {{post.User_Name}}</i>
+					&nbsp;
+					<i class = "far fa-calendar"> {{post.date}}</i>
+					&nbsp;
+					<i class = "fa fa-clock-o">{{post.time}}</i>
+					&nbsp;
+					<i class = "fa fa-comments">{{post.comments}}</i>
+				</div>
+			</div>
+			{% endfor %}
+			<!--
+			<div class="post">
+				<div class="post-info">
+					<h1><a href="/blog-single/">How to face interviews and solve coding problems</a></h1>
+					<i class = "far fa-user"> Karthik Shenoy</i>
+					&nbsp;
+					<i class = "far fa-calendar"> Jan 8, 2021</i>
+				</div>
+			</div>
+			-->
+
+		</div>
+	</div>
+	<!-- // posts carosel -->
+
+	<!-- content -->
+	<div class = "content clearfix">
+
+		<!-- main content -->
+		<div class = "main-content">
+			<h1 class = "recent-post-title">Recent Posts</h1>
+			{% for post in recent_posts %}
+
+				<div class = "post">
+					<div class="post-preview">
+						<h1><a href = "{% url 'blog_single' blog_id=post.Blog_id %}">{{post.title}}</a></h1>
+						<i class = "far fa-user"> {{post.User_Name}}</i>
+						&nbsp;
+						<i class = "far fa-calendar"> {{post.date}}</i>
+						&nbsp;
+						<i class = "fa fa-clock-o">{{post.time}}</i>
+						&nbsp;
+						<i class = "fa fa-comments">{{post.comments}}</i>
+						<p class = "previw-text">{{post.p_text | safe }}</p>
+						<a href = "{% url 'blog_single' blog_id=post.Blog_id %}" class = "btn read-more">Read More</a>
+					</div>
+				</div>
+
+			{% endfor %}
+
+			<!--
+			<div class = "post">
+				<div class="post-preview">
+					<h1><a href = "/blog-single/">How to face interviews and solve coding problems</a></h1>
+					<i class = "far fa-user"> Karthik Shenoy</i>
+					&nbsp;
+					<i class = "far fa-calendar"> Jan 8, 2021</i>
+					<p class = "previw-text">A paragraph is a series of related sentences developing a central idea, called the topic. Try to think about paragraphs in terms of thematic unity: a paragraph is a sentence or a group of sentences that supports one central, unified idea. Paragraphs add one idea at a time to your broader argument</p>
+					<a href = "/blog-single/" class = "btn read-more">Read More</a>
+				</div>
+			</div>
+		 -->
+		</div>
+		<!-- // main content -->
+		<div class = "side-bar">
+			<div class = "section search">
+				<h2 class = "section-title">Search</h2>
+				<form method = "POST">
+					<input type = "text" name="search-term" class="text-input" placeholder = "Search...">
+				</form>
+			</div>
+
+			<div class = "section search">
+				<h2 class = "section-title">Topics</h2>
+				<ul>
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- // content -->
+</div>
+<!-- // Page Wrapper -->
+
+
+<!-- JQUERY --> 
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+<!-- Slick Carousel --> 
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script type="text/javascript" src="{% static 'js/scripts_Blog.js' %}"></script>

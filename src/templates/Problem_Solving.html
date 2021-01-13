@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block specif_style  %}
-<link rel="stylesheet" href="{% static 'css/style_PSF.css' %}">
+<link rel="stylesheet" href="{% static 'css/problem.css' %}">
 {% endblock specif_style  %}
 
 {% block content %}
 		<div class = "row">
 
-			<div class = "column">
-				<section class = "center-pane">
+			<div class = "col-lg-8">
+				<section class = "left-pane">
 				{% for problem in problems %}
 					<div class = "card">
 						<div class = "card-text">
@@ -24,7 +24,10 @@
 				</section>
 			</div>
 
-			<div class = "column">
+
+
+
+			<div class = "col-lg-4" id="sidebar">
 				<section class = "right-pane">
 					<div class = "difficulty-selecter">
 						<form method = "POST">
@@ -72,9 +75,6 @@
 						<label for="Searching">Searching</label><br>
 						<button type="submit">SORT PROBLEMS</button>
 						</form>
-					</div>
-					<div>
-						
 					</div>
 				</section>
 			</div>

@@ -1,0 +1,114 @@
+body {
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #f6f5f7;
+}
+
+.left-pane {
+    padding-left: 50px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-pane>div {
+    margin: 15px;
+}
+
+.card {
+    font-family: "Montserrat";
+    background: #ffffff;
+    width: 700px;
+    box-shadow: 0px 2px 0px rgba(205, 208, 203, 0.9);
+    text-align: left;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    background: #ecfcff;
+    transform: scale(1.15);
+}
+
+.card-text {
+    grid-area: text;
+    margin: 25px;
+    padding: 30px;
+}
+
+.card-text p {
+    color: grey;
+    font-size: 15px;
+    font-weight: 300;
+    padding-left: 2px;
+}
+
+.card-text h2 {
+    color: #0883bd;
+    margin-top: 0px;
+    font-size: 22px;
+}
+
+.problem-solve-button {
+    position: relative;
+    top: 50%;
+    margin-top: -100px;
+    padding-bottom: 30px;
+    margin-left: 500px;
+}
+
+.solve-button {
+    background: #0883bd;
+    padding: 8px 15px;
+    font-size: 15px;
+    color: #ffffff;
+    font-family: "Montserrat";
+    cursor: pointer;
+    margin: 8px;
+    position: relative;
+    transition: 0.8s;
+    overflow: hidden;
+    border: transparent;
+    padding-top: 5px;
+}
+
+
+/* .solve-button:hover {
+    content: "";
+    background: none;
+    color: #0883bd;
+    border: none;
+} */
+
+#sidebar {
+    float: left;
+    padding: 13px 0 0 45px;
+    height: 1400px;
+    border-right: 1px solid #eee;
+    padding-top: 60px;
+}
+
+#sidebar h3 {
+    color: #262626;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 35px 0 10px 0;
+    letter-spacing: 1px;
+    clear: both;
+    font-style: "montserrat";
+}
+
+.right-pane {
+    width: 300px;
+    padding-left: 10px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
