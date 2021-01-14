@@ -14,10 +14,7 @@
 			<div class="card-text">
 				<h2>{{site.title}}</h2>
 			</div>
-			<form method="POST">
-			{% csrf_token %}
-			<button name = "{{site.site}}" value = "{{ site.site }}">Click here</button>
-			</form>
+			<button><a href="{% url 'resources_topics' val=site.site %}">Click here</a></button>
 		</div>
 {% endfor %}
 {% endblock content %}
