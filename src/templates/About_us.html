@@ -12,19 +12,19 @@
 
 
     {% block specif_style  %}
-      <link rel="stylesheet" href="{% static 'css/bootstrap.min.cs' %}">
-      <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
-      <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-      <link rel="stylesheet" href="{% static 'css/icofont.csss' %}">
-      <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
-      <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
-      <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
-      <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
-      <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-      <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
-      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-      <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {% endblock specif_style  %}
+ 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.cs' %}">
+	<link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/icofont.csss' %}">
+	<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+	<link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	<link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	{% endblock specif_style  %}
 	
  
 {% block content %}
@@ -46,9 +46,6 @@
         </div>
         <!-- End Preloader -->
 		
-		
-	
-		<!-- Header Area -->
 		<header class="header" >
 			
 			<!-- Header Inner -->
@@ -69,34 +66,35 @@
 								<div class="main-menu">
 									<nav class="navigation">
 										<ul class="nav menu">
-											<li class="active"><a href="#">Home </a>
+											<li class="active"><a href="/aboutus/">Home </a>
 												<ul class="dropdown">
 													<li><a href="index.html">Home Page 1</a></li>
 												</ul>
 											</li>
 											<li><a href="#">About </a></li>
-											<li><a href="#">Aptitude </a></li>
-											<li><a href="#">Coding <i class="icofont-rounded-down"></i></a>
+											<li><a href="/aptitude/">Aptitude </a></li>
+											<li><a href="/Problem_Solving/">Coding <i class="icofont-rounded-down"></i></a>
 												{% comment %} <ul class="dropdown">
 													<li><a href="404.html">Aptitude</a></li>
 													<li><a href="404.html">Coding</a></li>
 												</ul> {% endcomment %}
 											</li>
-											<li><a href="#">Blogs <i class="icofont-rounded-down"></i></a>
+											<li><a href="/blog/">Blogs <i class="icofont-rounded-down"></i></a>
 												{% comment %} <ul class="dropdown">
 													<li><a href="blog-single.html">Blog Details</a></li>
 												</ul> {% endcomment %}
 											</li>
-											<li><a href="contact.html">Resources</a></li>
+											<li><a href="/resources/">Resources</a></li>
+											<li><a href=""><i class ="far fa-user"></i>&nbsp;{{user_name}}<i class="icofont-rounded-down"></i></a>
+											 <ul class="dropdown">
+													<li><a href="/manage-posts/">Manage Posts</a></li>
+													<li><a href="/logout/">Log out</a></li>
+												</ul>
+											</li>
 										</ul>
 									</nav>
 								</div>
 								<!--/ End Main Menu -->
-							</div>
-							<div class="col-lg-2 col-12">
-								<div class="get-quote">
-									<a href="appointment.html" class="btn">Go to profile</a>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -373,6 +371,7 @@
 		<!--/ End Footer Area -->
 		
 			<!-- jquery Min JS -->
+
     <script type="text/javascript" src="{% static 'js/jquery.min.js'%}" ></script>
 		<!-- jquery Migrate JS -->
     <script type="text/javascript" src="{% static 'js/jquery-migrate-3.0.0.js'%}" ></script>
@@ -412,5 +411,4 @@
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js'%}" ></script>
 		<!-- Main JS -->
     <script type="text/javascript" src="{% static 'js/main.js'%}" ></script>
-    </body>
 {% endblock content %}

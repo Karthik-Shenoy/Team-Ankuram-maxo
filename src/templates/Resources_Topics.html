@@ -11,16 +11,14 @@
 			<div class = "column">
 				<section class = "center-pane">
 				{% for resource in resources  %}
-					{% if resource.site == val %}
-						<div class = "card">
-							<div class = "card-text">
-								<h2>{{resource.title}}</h2>
-							</div>
-							<div class = "resource-solve-button">
-								<button class = "solve-button">Solve resource</button>
-							</div>
+					<div class = "card">
+						<div class = "card-text">
+							<h2>{{resource.title}}</h2>
 						</div>
-					{% endif %}
+						<div class = "resource-solve-button">
+							<button class = "solve-button">Solve resource</button>
+						</div>
+					</div>
 				{% endfor %}
 				</section>
 			</div>

@@ -2651,15 +2651,8 @@ Version:	1.1
         border: none;
     }
     
-    .main-sidebar .single-post .image img {
-        float: left;
-        width: 80px;
-        height: 80px;
-        margin-right: 20px;
-    }
-    
     .main-sidebar .single-post .content {
-        padding-left: 100px;
+        padding-left: 10px;
     }
     
     .main-sidebar .single-post .content h5 {
@@ -2801,14 +2794,9 @@ Version:	1.1
         float: left;
     }
     
-    .news-single .meta-left .author img {
-        width: 45px;
-        height: 45px;
-        border-radius: 100%;
-        margin-right: 12px;
-    }
     
     .news-single .meta-left .author {
+        margin-top: 10px;
         float: left;
     }
     

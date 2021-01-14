@@ -177,7 +177,16 @@ def logout(request):
 	return redirect('/signin/')
 
 def About_Us_View(request, *args, **kwargs):
-	return render(request, 'About_us.html', {})
+	user_name = ""
+	if(not check_key(request.session, 'uid')):
+		logged_in = 0
+	else:
+		user_uid = request.session['uid']
+		logged_in = 1
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
+
+	return render(request, 'About_us.html', {"logged_in": logged_in, "user_name": user_name})
 
 def Aptitude_View(request, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
@@ -199,10 +208,13 @@ def Aptitude_View(request, *args, **kwargs):
 		for doc in problems_ref.stream():
 			problem = doc.to_dict()
 			if(problem['topic'] in topic_list):
+				problem["link"] = problem["link"][:-1]
 				problems.append(problem)
 	else:
 		for doc in problems_ref.stream():
-			problems.append(doc.to_dict())
+			problem = doc.to_dict()
+			problem["link"] = problem["link"][:-1]
+			problems.append(problem)
 			
 	return render(request, 'Aptitude_Problems_Page.html', {"problems":problems})
 
@@ -227,30 +239,18 @@ def Resources_View(request, *args):
 	siteCards = []
 	for doc in resourceSites_ref.stream():
 		siteCards.append(doc.to_dict())
+	
 
+	return render(request, 'Resources.html', {"siteCards": siteCards})
+
+def Resources_Topic_View(request, val, *args):
 	resourceTopics_ref = Fire_Store.collection(u'Resources_Topics')
 	resources = []
 	for doc in resourceTopics_ref.stream():
 		resource = doc.to_dict()
-		resources.append(resource)
-
-
-	if request.POST.get("GFG"):
-		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "GFG"})
-	
-	elif request.POST.get("TP"):
-		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "TP"})
-	
-	elif request.POST.get("CP"):
-		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "CP"})
-	
-	elif request.POST.get("W3"):
-		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "W3"})
-	
-	elif request.POST.get("CF"):
-		return render(request, 'Resources_Topics.html', {"resources": resources, "val": "CF"})
-
-	return render(request, 'Resources.html', {"siteCards": siteCards})
+		if(resource["site"] == str(val)):
+			resources.append(resource)
+	return render(request, "Resources_Topics.html", {"resources": resources})
 
 
 def Blog_Page_View(request, *args, **kwargs):
