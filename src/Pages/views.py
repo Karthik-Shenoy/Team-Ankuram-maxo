@@ -82,7 +82,7 @@ def Non_User_View(request, *args, **kwargs):
 
 def Problem_Solving_View(request, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
-		return redirect("/non-user/")
+		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
 	problems_ref = Fire_Store.collection(u'Problems')
@@ -170,7 +170,7 @@ def Post_Signin_View(request, *args, **kwargs):
 
 def logout(request):
 	if(not check_key(request.session, 'uid')):
-		return redirect("/non-user/")
+		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
 	dj_auth.logout(request)
@@ -190,7 +190,7 @@ def About_Us_View(request, *args, **kwargs):
 
 def Aptitude_View(request, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
-		return redirect("/non-user/")
+		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
 
@@ -223,7 +223,7 @@ def Home_View(request, *args, **kwargs):
 
 def Reset_Page_View(request, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
-		return redirect("/non-user/")
+		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
 	resetEmail = request.POST['ResetEmail']
@@ -232,7 +232,7 @@ def Reset_Page_View(request, *args, **kwargs):
 
 def Resources_View(request, *args):
 	if(not check_key(request.session, 'uid')):
-		return redirect("/non-user/")
+		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
 	resourceSites_ref = Fire_Store.collection(u'Resource_cards')
@@ -255,7 +255,7 @@ def Resources_Topic_View(request, val, *args):
 
 def Blog_Page_View(request, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
-		return redirect("/non-user/")
+		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
 
@@ -272,9 +272,34 @@ def Blog_Page_View(request, *args, **kwargs):
 
 	previews.sort(key=recent_key, reverse=True)
 	trending_posts.sort(key=trending_key, reverse=True)
-	trending_posts = trending_posts[:10]
+	trending_posts = trending_posts[:5]
 
-	return render(request, "Blog.html", {"recent_posts": previews, "trending_posts": trending_posts})
+	return render(request, "Blog-New.html", {"recent_posts": previews, "trending_posts": trending_posts})
+
+def Blog_Page_Sort_View(request, topic, *args, **kwargs):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/signin/")
+	else:
+		user_uid = request.session['uid']
+
+	Blog_Posts = Fire_Store.collection(u'Blog-Posts')
+	previews = []
+	trending_posts = []
+	for post in Blog_Posts.stream():
+		Blog_Post = post.to_dict()
+		if(Blog_Post["topic"]==topic):
+			date = Blog_Post["time_stamp"][:13]
+			time = ctime(Blog_Post["time_stamp"].split()[3])
+			preview = {"title": Blog_Post["title"], "p_text": Blog_Post["body"][:300], "time_stamp": Blog_Post["time_stamp"], "User_Name": Blog_Post["User_Name"], "Blog_id": Blog_Post["Blog_id"], "date": date, "time": time, "comments": Blog_Post["comments"]}
+			previews.append(preview)
+		trending_posts.append(Blog_Post)
+
+	previews.sort(key=recent_key, reverse=True)
+	trending_posts.sort(key=trending_key, reverse=True)
+	trending_posts = trending_posts[:5]
+
+	return render(request, "Blog-New.html", {"recent_posts": previews, "trending_posts": trending_posts})
+
 
 def Blog_Single_View(request, blog_id, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):

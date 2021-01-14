@@ -8,6 +8,7 @@ urlpatterns = [
     path('postsignin/', views.Post_Signin_View),
     path('aptitude/', views.Aptitude_View),
     path('home/', views.Home_View),
+    path('blog/<topic>', views.Blog_Page_Sort_View, name="blog_sort"),
     path('blog/', views.Blog_Page_View),
     path('resources/', views.Resources_View),
     path('resources_topic/<val>', views.Resources_Topic_View, name="resources_topics"),
