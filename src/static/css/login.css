@@ -46,7 +46,7 @@ a {
 button {
     border-radius: 20px;
     border: 1px solid transparent;
-    background-color: #3fc5f0;
+    background-color: #1A76D1;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -65,7 +65,7 @@ button:focus {
 }
 
 button.ghost {
-    background-color: #3fc5f0;
+    background-color: #006bd6;
     border-color: transparent;
 }
 
@@ -161,8 +161,8 @@ input {
 
 .overlay {
     background: #FF416C;
-    background: -webkit-linear-gradient(to right, #5edfff, #5edfff);
-    background: linear-gradient(to right, #5edfff, #5edfff);
+    background: -webkit-linear-gradient(to right, #1A76D1, #1A76D1);
+    background: linear-gradient(to right, #1A76D1, #1A76D1);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
