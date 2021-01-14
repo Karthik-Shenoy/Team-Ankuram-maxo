@@ -2,34 +2,75 @@
 {% load static %}
 
 {% block specif_style  %}
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/boot-strap/bootstrap.min.css' %}">
-    <!-- Nice Select CSS -->
-    <link rel="stylesheet" href="{% static 'css/boot-strap/nice-select.css' %}">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="{% static 'css/boot-strap/font-awesome.min.css' %}">
-    <!-- icofont CSS -->
-    <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
-    <!-- Slicknav -->
-    <link rel="stylesheet" href="{% static 'css/boot-strap/slicknav.min.css' %}">
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="{% static 'css/boot-strap/owl-carousel.css' %}">
-    <!-- Datepicker CSS -->
-    <link rel="stylesheet" href="{% static 'css/boot-strap/datepicker.css' %}">
-    <!-- Animate CSS -->
-    <link rel="stylesheet" href="{% static 'css/boot-strap/animate.min.css' %}">
-    <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" href="{% static 'css/boot-strap/magnific-popup.css' %}">
-    
-    <!-- Medipro CSS -->
-    <link rel="stylesheet" href="{% static 'css/boot-strap/normalize.css' %}">
-    <link rel="stylesheet" href="{% static 'css/boot-strap/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/boot-strap/responsive.css' %}">
-
-	<link rel="stylesheet" href="{% static 'css/problem.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.cs' %}">
+  <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/icofont.csss' %}">
+  <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/problem.css' %}">
 {% endblock specif_style  %}
 
 {% block content %}
+
+<!-- header-area -->
+    <header class="header" >
+      
+      <!-- Header Inner -->
+      <div class="header-inner">
+        <div class="container">
+          <div class="inner">
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-12">
+                <!-- Start Logo -->
+                <div class="logo">
+                  {% comment %} <a href="index.html"><img class="img-fluid" src="{% static 'img/Ankuram logo.png' "width=50px" %}"></a> {% endcomment %}
+                </div>
+                <!-- End Logo -->
+                
+              </div>
+              <div class="col-lg-7 col-md-9 col-12">
+                <!-- Main Menu -->
+                <div class="main-menu">
+                  <nav class="navigation">
+                    <ul class="nav menu">
+                      <li><a href="/aboutus/">Home </a></li>
+                      <li><a href="#">About </a></li>
+                      <li class="active"><a href="/aptitude/">Aptitude </a></li>
+                      <li><a href="/Problem_Solving/">Coding <i class="icofont-rounded-down"></i></a>
+                        {% comment %} <ul class="dropdown">
+                          <li><a href="404.html">Aptitude</a></li>
+                          <li><a href="404.html">Coding</a></li>
+                        </ul> {% endcomment %}
+                      </li>
+                      <li><a href="/blog/">Blogs <i class="icofont-rounded-down"></i></a></li>
+                      <li><a href="/resources/">Resources</a></li>
+                      <li><a href=""><i class ="far fa-user"></i>&nbsp;{{user_name}}<i class="icofont-rounded-down"></i></a>
+                       <ul class="dropdown">
+                          <li><a href="/manage-posts/">Manage Posts</a></li>
+                          <li><a href="/logout/">Log out</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <!--/ End Main Menu -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+
+
 		<div class = "row">
 
 			<div class = "col-lg-8">
