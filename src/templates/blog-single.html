@@ -18,10 +18,10 @@
 
 {% block specif_style  %}
     <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{% static 'css/bootstrap.min.cs' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
   <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/icofont.csss' %}">
+  <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
   <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
   <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
@@ -72,19 +72,11 @@
                 <div class="main-menu">
                   <nav class="navigation">
                     <ul class="nav menu">
-                      <li><a href="/aboutus/">Home </a></li>
-                      <li><a href="#">About </a></li>
+                      <li><a href="/home/">Home </a></li>
                       <li><a href="/aptitude/">Aptitude </a></li>
-                      <li><a href="/Problem_Solving/">Coding <i class="icofont-rounded-down"></i></a>
-                        {% comment %} <ul class="dropdown">
-                          <li><a href="404.html">Aptitude</a></li>
-                          <li><a href="404.html">Coding</a></li>
-                        </ul> {% endcomment %}
+                      <li><a href="/Problem_Solving/">Coding </a>
                       </li>
-                      <li class="active"><a href="/blog/">Blogs <i class="icofont-rounded-down"></i></a>
-                        {% comment %} <ul class="dropdown">
-                          <li><a href="blog-single.html">Blog Details</a></li>
-                        </ul> {% endcomment %}
+                      <li class="active"><a href="/blog/">Blogs</a>
                       </li>
                       <li><a href="/resources/">Resources</a></li>
                       <li><a href=""><i class ="far fa-user"></i>&nbsp;{{user_name}}<i class="icofont-rounded-down"></i></a>

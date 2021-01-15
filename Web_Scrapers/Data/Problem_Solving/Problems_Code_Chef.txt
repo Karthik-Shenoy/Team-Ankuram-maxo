@@ -1,0 +1,50 @@
+The Christmas Cookies,Hard,Range-Queries,https://www.codechef.com/problems/KOL1507
+Circle Eating,Hard,Range-Queries,https://www.codechef.com/problems/CIRCLEAT
+Grid Game,Hard,Range-Queries,https://www.codechef.com/problems/GRIDGM
+Segment Queries,Hard,Range-Queries,https://www.codechef.com/problems/SEGMENTQ
+Chef and Cake,Hard,Range-Queries,https://www.codechef.com/problems/CHEFCK
+Fuzzy Addition,Medium,Amortized-Analysis,https://www.codechef.com/problems/FUZZYADD
+Code Together,Hard,Amortized-Analysis,https://www.codechef.com/problems/CMX1P01
+Minimum Insertions,Hard,Amortized-Analysis,https://www.codechef.com/problems/MININS
+Weird Question,Hard,Amortized-Analysis,https://www.codechef.com/problems/WEIRD2
+Perfect Tree Problem,Hard,Amortized-Analysis,https://www.codechef.com/problems/PTREE
+Cheating during pandamic,Easy,Complete-Search,https://www.codechef.com/problems/CHTPNDMC
+Minimum Area,Medium,Complete-Search,https://www.codechef.com/problems/MINAREA
+Candies,Medium,Complete-Search,https://www.codechef.com/problems/CANDIES2
+Find Steps,Medium,Complete-Search,https://www.codechef.com/problems/FINSTP
+Tunnel or Road,Medium,Complete-Search,https://www.codechef.com/problems/CAC103
+Group,Hard,Complete-Search,https://www.codechef.com/problems/GRP2
+C,Medium,Complete-Search,https://www.codechef.com/problems/EQSBSTR1
+Sword Art Online,Hard,Complete-Search,https://www.codechef.com/problems/SWO
+Painting a Town,Hard,Complete-Search,https://www.codechef.com/problems/KGP16G
+Bob and the Examination,Medium,Complete-Search,https://www.codechef.com/problems/BOBNEXAM
+Smiling Queen(keteki),Medium,Complete-Search,https://www.codechef.com/problems/QM6P5A
+Guess the Middle,Hard,Complete-Search,https://www.codechef.com/problems/GUESSMID
+Fluffy and Contest Scores,Hard,Complete-Search,https://www.codechef.com/problems/MCO16301
+Strike-Rate,Hard,Complete-Search,https://www.codechef.com/problems/SRATE
+Yet another substring problem,Hard,Complete-Search,https://www.codechef.com/problems/GRIDCONN
+Rearrangement,Hard,Complete-Search,https://www.codechef.com/problems/REARRAN
+Sum the Alphabets,Easy,Complete-Search,https://www.codechef.com/problems/SUMALPHA
+Chef Chooses a Subset,Hard,Complete-Search,https://www.codechef.com/problems/CO92TREE
+Placing Rook,Hard,Complete-Search,https://www.codechef.com/problems/MCO16201
+Help Deepak Find Unique Names,Medium,Complete-Search,https://www.codechef.com/problems/DISTINCT
+Balancing Act,Easy,Time-Complexity,https://www.codechef.com/problems/BALANCE
+The Founder and The Ghost,Hard,Time-Complexity,https://www.codechef.com/problems/SOPC013
+RENOVATION,Medium,Time-Complexity,https://www.codechef.com/problems/RENV20
+Ichicka and Toys,Medium,Time-Complexity,https://www.codechef.com/problems/IATOYS
+Central Intelligence Pawgency,Hard,Time-Complexity,https://www.codechef.com/problems/CAC203
+McHefs 3D Logo,Medium,Time-Complexity,https://www.codechef.com/problems/LOGO
+C,Hard,Time-Complexity,https://www.codechef.com/problems/FCF2P3
+Final Round,Medium,Time-Complexity,https://www.codechef.com/problems/FINALR
+Skill Improvement,Medium,Time-Complexity,https://www.codechef.com/problems/SKLIMP
+Help with string,Hard,Time-Complexity,https://www.codechef.com/problems/CHKSTR
+Functions and Festivals,Hard,Time-Complexity,https://www.codechef.com/problems/FUNFES
+Century Matrix,Hard,Time-Complexity,https://www.codechef.com/problems/CNTMTX
+Invert Case,Medium,Time-Complexity,https://www.codechef.com/problems/MUYPN
+Ada Farm,Hard,Time-Complexity,https://www.codechef.com/problems/ADAFARM
+Save Wuhan,Medium,Time-Complexity,https://www.codechef.com/problems/WUHAN
+Asya & Encoding,Medium,Time-Complexity,https://www.codechef.com/problems/ASYA1
+Help with distances,Hard,Time-Complexity,https://www.codechef.com/problems/CHKDST
+Pairwise String Sums,Hard,Time-Complexity,https://www.codechef.com/problems/STRSUM
+UnAble to decipher,Medium,Time-Complexity,https://www.codechef.com/problems/UNABLE
+Min and Max,Hard,Time-Complexity,https://www.codechef.com/problems/MIMAX

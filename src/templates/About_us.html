@@ -67,7 +67,7 @@
 									<nav class="navigation">
 										<ul class="nav menu">
 
-											<li class="active"><a href="#">Home </a>
+											<li class="active"><a href="/home/">Home </a>
 												{% comment %} <ul class="dropdown">
 
 											<li class="active"><a href="/aboutus/">Home </a>
@@ -77,24 +77,25 @@
 												</ul> {% endcomment %}
 											</li>
 											<li><a href="/aptitude/">Aptitude </a></li>
-											<li><a href="/Problem_Solving/">Coding <i class="icofont-rounded-down"></i></a>
-												{% comment %} <ul class="dropdown">
-													<li><a href="404.html">Aptitude</a></li>
-													<li><a href="404.html">Coding</a></li>
-												</ul> {% endcomment %}
-											</li>
-											<li><a href="/blog/">Blogs <i class="icofont-rounded-down"></i></a>
-												{% comment %} <ul class="dropdown">
-													<li><a href="blog-single.html">Blog Details</a></li>
-												</ul> {% endcomment %}
+											<li><a href="/Problem_Solving/">Coding </a></li>
+											<li><a href="/blog/">Blogs</a>
 											</li>
 											<li><a href="/resources/">Resources</a></li>
+											{% if logged_in == 1 %}
 											<li><a href=""><i class ="far fa-user"></i>&nbsp;{{user_name}}<i class="icofont-rounded-down"></i></a>
 											 <ul class="dropdown">
 													<li><a href="/manage-posts/">Manage Posts</a></li>
 													<li><a href="/logout/">Log out</a></li>
 												</ul>
 											</li>
+											{% endif %}
+											{% if logged_in == 0 %}
+											<div class="button-signin">
+											<div class="col-lg-2 col-12">
+												<a href="/signin/" class="btn">Sign in</a>
+											</div>
+											</div>
+											{% endif %}
 										</ul>
 									</nav>
 								</div>

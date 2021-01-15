@@ -24,7 +24,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = KeyFile_Path
 
 #inititalizing firestore and database
 Fire_Store = firestore.Client()
-File = open(str(BASE_DIR)+"\\Web_Scrapers\\Data\\Resources\\Resources_CP_Algorithms.txt", 'r')
+File = open(str(BASE_DIR)+"\\Web_Scrapers\\Data\\Resources\\Resources_Code_Forces.txt", 'r')
 
 num = 168
 for line in File:
@@ -32,6 +32,6 @@ for line in File:
 	#Fire_Store.collection(u'user').document(uid).set(data)
 	raw = line.split(',')
 	n = len(raw[1])
-	data = {u"title": raw[0], u"link": raw[1][:n-1], "site": "CP"}
-	Fire_Store.collection(u'Resources_Topics').document("Resource-"+str(num)).set(data)
+	data = {u"title": raw[0], u"link": raw[1][:n-1], "site": "CF"}
+	Fire_Store.collection(u'Resources_Topics').document("Resource-CF-"+str(num)).set(data)
 	num+=1

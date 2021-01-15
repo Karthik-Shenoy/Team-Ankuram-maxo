@@ -4914,3 +4914,10 @@ Version:	1.1
     /*=========================
 	End Footer CSS
 ===========================*/
+
+
+.button-signin {
+    padding-top: 15px;
+    padding-left: 10px;
+    color: white;
+}

@@ -77,14 +77,17 @@ def trending_key(item):
 
 # Create your views here.
 
-def Non_User_View(request, *args, **kwargs):
-	return render(request, "Pl-Signin.html", {})
+def Redirect_Home_View(request, *args, **kwargs):
+	return redirect('/home/')
 
 def Problem_Solving_View(request, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
 		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
+
 	problems_ref = Fire_Store.collection(u'Problems')
 	problems = []
 
@@ -104,24 +107,29 @@ def Problem_Solving_View(request, *args, **kwargs):
 		for doc in problems_ref.stream():
 			problem = doc.to_dict()
 			if(problem['topic'] in topic_list and problem['difficulty'] in difficulty_list):
+				problem["link"] = problem["link"][:-1]
 				problems.append(problem)
 	elif(valid(topic_list)):
 		for doc in problems_ref.stream():
 			problem = doc.to_dict()
 			if(problem['topic'] in topic_list):
+				problem["link"] = problem["link"][:-1]
 				problems.append(problem)
 	elif(valid(difficulty_list)):
 		for doc in problems_ref.stream():
 			problem = doc.to_dict()
 			if(problem['difficulty'] in difficulty_list):
+				problem["link"] = problem["link"][:-1]
 				problems.append(problem)
 	else:
 		for doc in problems_ref.stream():
-			problems.append(doc.to_dict())
+			problem = doc.to_dict()
+			problem["link"] = problem["link"][:-1]
+			problems.append(problem)
 			
 
 
-	return render(request, 'Problem_Solving.html',{"problems":problems})
+	return render(request, 'Problem_Solving.html',{"problems":problems, "user_name": user_name})
 
 def Signin_View(request, *args, **kwargs):
 	return render(request, 'loginpage.html',{})
@@ -176,7 +184,7 @@ def logout(request):
 	dj_auth.logout(request)
 	return redirect('/signin/')
 
-def About_Us_View(request, *args, **kwargs):
+def Home_View(request, *args, **kwargs):
 	user_name = ""
 	if(not check_key(request.session, 'uid')):
 		logged_in = 0
@@ -193,6 +201,8 @@ def Aptitude_View(request, *args, **kwargs):
 		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
 
 	problems_ref = Fire_Store.collection(u'Aptitude_Problems')
 	problems = []
@@ -216,10 +226,7 @@ def Aptitude_View(request, *args, **kwargs):
 			problem["link"] = problem["link"][:-1]
 			problems.append(problem)
 			
-	return render(request, 'Aptitude_Problems_Page.html', {"problems":problems})
-
-def Home_View(request, *args, **kwargs):
-	return render(request, 'home.html', {})
+	return render(request, 'Aptitude_Problems_Page.html', {"problems":problems, "user_name": user_name})
 
 def Reset_Page_View(request, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
@@ -235,22 +242,31 @@ def Resources_View(request, *args):
 		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
+
 	resourceSites_ref = Fire_Store.collection(u'Resource_cards')
 	siteCards = []
 	for doc in resourceSites_ref.stream():
 		siteCards.append(doc.to_dict())
 	
 
-	return render(request, 'Resources.html', {"siteCards": siteCards})
+	return render(request, 'Resources.html', {"siteCards": siteCards, "user_name": user_name})
 
 def Resources_Topic_View(request, val, *args):
+	if(not check_key(request.session, 'uid')):
+		return redirect("/signin/")
+	else:
+		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
 	resourceTopics_ref = Fire_Store.collection(u'Resources_Topics')
 	resources = []
 	for doc in resourceTopics_ref.stream():
 		resource = doc.to_dict()
 		if(resource["site"] == str(val)):
 			resources.append(resource)
-	return render(request, "Resources_Topics.html", {"resources": resources})
+	return render(request, "Resources_Topics.html", {"resources": resources, "user_name": user_name})
 
 
 def Blog_Page_View(request, *args, **kwargs):
@@ -258,6 +274,8 @@ def Blog_Page_View(request, *args, **kwargs):
 		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
 
 	Blog_Posts = Fire_Store.collection(u'Blog-Posts')
 	previews = []
@@ -274,13 +292,15 @@ def Blog_Page_View(request, *args, **kwargs):
 	trending_posts.sort(key=trending_key, reverse=True)
 	trending_posts = trending_posts[:5]
 
-	return render(request, "Blog-New.html", {"recent_posts": previews, "trending_posts": trending_posts})
+	return render(request, "Blog-New.html", {"recent_posts": previews, "trending_posts": trending_posts, "user_name": user_name})
 
 def Blog_Page_Sort_View(request, topic, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
 		return redirect("/signin/")
 	else:
 		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
 
 	Blog_Posts = Fire_Store.collection(u'Blog-Posts')
 	previews = []
@@ -306,6 +326,8 @@ def Blog_Single_View(request, blog_id, *args, **kwargs):
 		return redirect("/non-user/")
 	else:
 		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
 	# access the respective blog using its id #
 	curr_post = Fire_Store.collection(u'Blog-Posts').document(blog_id).get()
 	curr_post = curr_post.to_dict()
@@ -341,7 +363,7 @@ def Blog_Single_View(request, blog_id, *args, **kwargs):
 	# // Comment display section #
 	disp_comms.sort(key=recent_key, reverse=True)
 	
-	return render(request, "blog-single.html", {"current_post": curr_post, "current_comments": disp_comms})
+	return render(request, "blog-single.html", {"current_post": curr_post, "current_comments": disp_comms, "user_name":user_name})
 
 
 def Manage_Posts_View(request, *args, **kwargs):
@@ -349,6 +371,9 @@ def Manage_Posts_View(request, *args, **kwargs):
 		return redirect("/non-user/")
 	else:
 		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
+
 	user_uid = request.session['uid'] 
 	Blog_Posts = Fire_Store.collection(u'Blog-Posts')
 	users_posts = []
@@ -356,13 +381,15 @@ def Manage_Posts_View(request, *args, **kwargs):
 		Blog_Post = post.to_dict()
 		if(user_uid == Blog_Post["Uid"]):
 			users_posts.append(Blog_Post)	
-	return render(request, "Manage-Posts.html", {"Posts": users_posts})
+	return render(request, "Manage-Posts.html", {"Posts": users_posts, "user_name": user_name})
 
 def Edit_Post_View(request, blog_id, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
 		return redirect("/non-user/")
 	else:
 		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
 	# access the respective blog using its id #
 	curr_post = Fire_Store.collection(u'Blog-Posts').document(blog_id).get()
 	curr_post = curr_post.to_dict()
@@ -381,7 +408,7 @@ def Edit_Post_View(request, blog_id, *args, **kwargs):
 		messages.error(request, "Enter the required fields", extra_tags = "INVALID_BLOG_DATA")
 	 
 
-	return render(request, "Edit-Post.html", {"current_post": curr_post})
+	return render(request, "Edit-Post.html", {"current_post": curr_post, "user_name":user_name})
 
 def Delete_Post(request, blog_id, *args, **kwargs):
 	if(not check_key(request.session, 'uid')):
@@ -396,6 +423,9 @@ def Create_Post_View(request, *args, **kwargs):
 		return redirect("/non-user/")
 	else:
 		user_uid = request.session['uid']
+		user = Fire_Store.collection(u'Users').document(user_uid).get().to_dict()
+		user_name = user["Name"]
+
 	title = request.POST.get("title")
 	body = request.POST.get("body")
 	topic = request.POST.get("topic")
@@ -420,13 +450,4 @@ def Create_Post_View(request, *args, **kwargs):
 		messages.error(request, "Enter the required fields", extra_tags = "INVALID_BLOG_DATA")
 	# // Posting the Blog #
 
-	return render(request, "Create-Post.html", {})
-
-def ChatBot(request, *args, **kwargs):
-	return render(request, "Chatbot.html", {})
-
-def Post_Chat(request, *args, **kwargs):
-	msg = request.POST.get('userMsg')
-	print(msg)
-	redirect_chat = redirect('/chatbot/')
-	return redirect_chat
+	return render(request, "Create-Post.html", {"user_name":user_name})
