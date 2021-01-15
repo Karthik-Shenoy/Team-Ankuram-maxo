@@ -356,7 +356,7 @@ Version:	1.1
     
     .header .logo {
         float: left;
-        margin-top: 18px;
+        margin-top: 1px;
     }
     
     .header .navbar {

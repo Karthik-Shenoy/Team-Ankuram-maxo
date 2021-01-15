@@ -11,6 +11,14 @@ body {
     flex-direction: column;
 }
 
+.heading {
+    font-size: 30px !important;
+    text-align: center;
+    color: #2C2D3F;
+    font-weight: 600;
+    padding-top: 50px;
+}
+
 .left-pane>div {
     margin: 15px;
 }
@@ -488,7 +496,7 @@ body {
 
 .header .logo {
     float: left;
-    margin-top: 18px;
+    margin-top: 1px;
 }
 
 .header .navbar {
