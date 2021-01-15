@@ -362,8 +362,18 @@ def Blog_Single_View(request, blog_id, *args, **kwargs):
 			disp_comms.append(curr_comment)
 	# // Comment display section #
 	disp_comms.sort(key=recent_key, reverse=True)
+
+
+	Blog_Posts = Fire_Store.collection(u'Blog-Posts')
+	trending_posts = []
+	for post in Blog_Posts.stream():
+		Blog_Post = post.to_dict()
+		trending_posts.append(Blog_Post)
+
+	trending_posts.sort(key=trending_key, reverse=True)
+	trending_posts = trending_posts[:5]
 	
-	return render(request, "blog-single.html", {"current_post": curr_post, "current_comments": disp_comms, "user_name":user_name})
+	return render(request, "blog-single.html", {"current_post": curr_post, "current_comments": disp_comms, "user_name":user_name, "trending_posts": trending_posts})
 
 
 def Manage_Posts_View(request, *args, **kwargs):

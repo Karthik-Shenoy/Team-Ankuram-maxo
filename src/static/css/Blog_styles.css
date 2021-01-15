@@ -1,7 +1,6 @@
 body {
     align-items: center;
     justify-content: center;
-    padding: 20px;
     background: #f6f5f7;
 }
 
@@ -2629,6 +2628,7 @@ Version:	1.1
         background: #fff;
         margin-top: 30px;
         background: transparent;
+        padding-right: 40px; 
     }
     
     .main-sidebar .single-widget {

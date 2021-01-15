@@ -208,50 +208,28 @@
               <div class="single-widget category">
                 <h3 class="title">Blog Categories</h3>
                 <ul class="categor-list">
-                  <li><a href="#">Men's Apparel</a></li>
-                  <li><a href="#">Women's Apparel</a></li>
-                  <li><a href="#">Bags Collection</a></li>
-                  <li><a href="#">Accessories</a></li>
-                  <li><a href="#">Sun Glasses</a></li>
+                  <li><a href="{% url 'blog_sort' topic='Aptitude' %}">Aptitude</a></li>
+                  <li><a href="{% url 'blog_sort' topic='Problem-Solving' %}"">Coding</a></li>
+                  <li><a href="{% url 'blog_sort' topic='Resources' %}"">Resources</a></li>
                 </ul>
               </div>
               <!--/ End Single Widget -->
               <!-- Single Widget -->
               <div class="single-widget recent-post">
-                <h3 class="title">Recent posts</h3>
-                <!-- Single Post -->
-                <div class="single-post">
-                  <div class="content">
-                    <h5><a href="#">We have annnocuced our new product.</a></h5>
-                    <ul class="comment">
-                      <li><i class="fa fa-calendar" aria-hidden="true"></i>Jan 11, 2020</li>
-                      <li><i class="fa fa-commenting-o" aria-hidden="true"></i>35</li>
-                    </ul>
+                <h3 class="title">Trending Posts</h3>
+                {% for post in trending_posts %}
+                  <div class="single-post">
+                    <div class="content">
+                      <h5><a href="{% url 'blog_single' blog_id=post.Blog_id %}">{{post.title}}</a></h5>
+                      <ul class="comment">
+                        <li><i class = "far fa-user"> {{post.User_Name}}</i></li>
+                        <li><i class="fa fa-calendar" aria-hidden="true"></i> {{post.date}}</li>
+                        <li><i class = "fa fa-clock-o"> {{post.time}}</i></li>
+                        <li><i class="fa fa-commenting-o" aria-hidden="true"></i> {{post.comments}}</li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-                <!-- End Single Post -->
-                <!-- Single Post -->
-                <div class="single-post">
-                  <div class="content">
-                    <h5><a href="#">Top five way for solving teeth problems.</a></h5>
-                    <ul class="comment">
-                      <li><i class="fa fa-calendar" aria-hidden="true"></i>Mar 05, 2019</li>
-                      <li><i class="fa fa-commenting-o" aria-hidden="true"></i>59</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- End Single Post -->
-                <!-- Single Post -->
-                <div class="single-post">
-                  <div class="content">
-                    <h5><a href="#">We provide highly business soliutions.</a></h5>
-                    <ul class="comment">
-                      <li><i class="fa fa-calendar" aria-hidden="true"></i>June 09, 2019</li>
-                      <li><i class="fa fa-commenting-o" aria-hidden="true"></i>44</li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- End Single Post -->
+                {% endfor %}
               </div>
               <!--/ End Single Widget -->>
             </div>
