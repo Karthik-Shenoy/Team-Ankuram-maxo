@@ -1,12 +1,12 @@
 body {
     align-items: center;
     justify-content: center;
-    background: #f6f5f7;
+    background: #fff;
 }
 
 .left-pane {
-    padding-left: 50px;
-    padding-top: 50px;
+    padding-left: 150px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -17,7 +17,7 @@ body {
 
 .card {
     font-family: "Montserrat";
-    background: #ffffff;
+    background: #fff;
     width: 700px;
     box-shadow: 0px 2px 0px rgba(205, 208, 203, 0.9);
     text-align: left;
@@ -26,7 +26,7 @@ body {
 }
 
 .card:hover {
-    background: #ecfcff;
+    background: #fff;
     transform: scale(1.15);
 }
 
@@ -44,7 +44,7 @@ body {
 }
 
 .card-text h2 {
-    color: #0883bd;
+    color: #1A76D1;
     margin-top: 0px;
     font-size: 22px;
 }
@@ -58,18 +58,19 @@ body {
 }
 
 .solve-button {
-    background: #0883bd;
+    background: #1A76D1;
     padding: 8px 15px;
     font-size: 15px;
     color: #ffffff;
     font-family: "Montserrat";
     cursor: pointer;
-    margin: 8px;
+    margin-top: 2px;
     position: relative;
     transition: 0.8s;
     overflow: hidden;
     border: transparent;
     padding-top: 5px;
+    height: 40px;
 }
 
 
@@ -85,7 +86,8 @@ body {
     padding: 13px 0 0 45px;
     height: 1400px;
     border-right: 1px solid #eee;
-    padding-top: 60px;
+    padding-top: 0px;
+    background-color: #fff;
 }
 
 #sidebar h3 {
@@ -102,6 +104,7 @@ body {
 .right-pane {
     width: 300px;
     padding-left: 10px;
+    padding-top: 20px;
 }
 
 .row {

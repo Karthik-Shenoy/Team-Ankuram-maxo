@@ -66,7 +66,7 @@
     <!-- End Header Area -->
     
 		<div class = "row">
-
+<h1>Coding Problems</h1>
 			<div class = "col-lg-8">
 				<section class = "left-pane">
 				{% for problem in problems %}
@@ -132,12 +132,28 @@
 
 						<input type="checkbox" id="Searching" name="T10" value="Searching">
 						<label for="Searching">Searching</label><br>
-						<button type="submit">SORT PROBLEMS</button>
+						<button type="submit" class= "solve-button">SORT PROBLEMS</button>
 						</form>
 					</div>
 				</section>
 			</div>
 
 		</div>
+
+		<footer id="footer" class="footer ">
+			
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-12">
+							<div class="copyright-content">
+								<p>© Copyright 2021  |  All Rights Reserved by Sushiksha|Ankuram </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Copyright -->
+		</footer>
 	
 {% endblock content %}

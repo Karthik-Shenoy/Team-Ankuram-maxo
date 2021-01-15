@@ -892,6 +892,7 @@ Version:	1.1
     .schedule .single-schedule p {
         color: #fff;
         margin-top: 22px;
+        font-size: 13.5px;
     }
     
     .schedule .single-schedule a {
@@ -1725,8 +1726,15 @@ Version:	1.1
 	End Testimonials CSS
 ===============================*/
     
-    body h1,
-    h3 {
+    body h1 {
+        font-size: 30px;
+        text-align: center;
+        color: #2C2D3F;
+        font-weight: 600;
+        padding-top: 50px;
+    }
+    
+    body h3 {
         font-size: 20px;
         text-align: center;
         color: #1a76d1;
@@ -2197,7 +2205,7 @@ Version:	1.1
         z-index: 99;
         margin: -23px 0 0 -75px;
         font-size: 15px;
-        background: #2889E4;
+        background: #1A76D1;
         font-size: 13px;
         line-height: 46px;
         padding: 0;
@@ -2793,7 +2801,6 @@ Version:	1.1
     .news-single .meta-left {
         float: left;
     }
-    
     
     .news-single .meta-left .author {
         margin-top: 10px;
@@ -4914,10 +4921,9 @@ Version:	1.1
     /*=========================
 	End Footer CSS
 ===========================*/
-
-
-.button-signin {
-    padding-top: 15px;
-    padding-left: 10px;
-    color: white;
-}
+    
+    .button-signin {
+        padding-top: 15px;
+        padding-left: 10px;
+        color: white;
+    }

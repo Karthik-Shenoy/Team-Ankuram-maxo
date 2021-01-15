@@ -74,13 +74,13 @@
 <div class = "admin-wrapper">
 	<!-- Admin-Content -->
 	<div class = "admin-content">
-		<div class="content">
-			<h2 class = "page-title">Create Post</h2>
-			<form action="/create-post/" method="POST">
+		<div class="content justify-content-center text-left">
+			<h2 class = "page-title text-center">Create Post</h2>
+			<form action="/create-post/" method="POST" class="col-lg-8 offset-lg-2 col-12">
 				{% csrf_token %}
 				<div class = "create-title">
 					<label>Title</label>
-					<input type = "text" class = text-input name = "title"/>
+					<input type = "text" class ="text" name = "title"/>
 				</div>
 				<div class = "create-body">
 					<label>Body</label>
@@ -101,7 +101,7 @@
                     {% for message in messages %}
                         {% if message.extra_tags == "INVALID_BLOG_DATA" %}
                         <div class="error-msg">
-                            <p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>
+                            <p style = "color: #1a76d1; font-weight: 600;">{{message}}</p>
                         </div>
                         {% endif %}
                     {% endfor %}

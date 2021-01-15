@@ -1,80 +1,93 @@
-body{
-	font-family: Arail;
-	align-items: center;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+body {
+    font-family: poppins;
+    align-items: center;
+    justify-content: center;
 }
 
-body > div{
-	margin:25px;
-}
 .card {
-	display: grid;
-	grid-template-columns: 249px;
-	grid-template-rows: 224px 100px;
-	grid-template-areas: "image" "text";
+    grid-template-areas: "image" "text";
+    font-family: Poppins;
+    border-radius: 18px;
+    background-color: #fff;
+    box-shadow: 0px 2px 0px rgba(205, 208, 203, 0.9);
+    text-align: left;
+    cursor: pointer;
+    width: 250px;
+}
 
-	font-family: Roboto;
-	border-radius: 18px;
-	background: rgb(252, 248, 210);
-	box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
-	text-align: left;
-	transition: 0.5s ease;
-	cursor: pointer;
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+.row {
+    margin: 0 -5px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 .card-image {
-	grid-area: image;
-	border-top-right-radius: 15px;
-	border-top-left-radius: 15px;
-	align-items: center;
-	justify-content: center;
+    grid-area: image;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
-.card-image img{
-	height: 224;
-	width: 249;
-	border-top-right-radius: 15px;
-	border-top-left-radius: 15px;
+.card-image img {
+    height: 224;
+    width: 249;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 .card-text {
-	grid-area: text;
-	margin 25px;
-	padding: 10px;
+    grid-area: text;
+    margin: 25px;
+    padding: 10px;
 }
 
-.card-text p{
-	color: grey;
-	font-size: 15px;
-	font-weight: 300;
+.card-text p {
+    color: grey;
+    font-size: 15px;
+    font-weight: 300;
 }
 
-.card-text h2{
-	color: #ff0a6c;
-	margin-top: 0px;
-	font-size: 22px;
+.card-text h2 {
+    color: #1A76D1;
+    margin-top: 0px;
+    font-size: 20px;
+    text-align: center;
 }
 
-.card:hover{
-	transform: scale(1.2);
-	box-shadow: 5px 5px 15px(0,0,0,0.6)
+.card:hover {
+    transform: scale(1.2);
+    box-shadow: 5px 5px 15px(0, 0, 0, 0.6)
+}
+
+button {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: 2px solid black;
+    padding: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    margin-left: 50px;
 }
 
 
-button{
-	margin-top: 25px;
-	margin-bottom: 20px;
-	background-color: white;
-	border: 2px solid black;
-	padding: 7px;
-	border-radius: 5px;
-	cursor: pointer;
-
-}
-button:hover{
-	background-color: green;
-	color: white;
-	transition: .5s;
-}
+/* button:hover {
+    background-color: green;
+    color: white;
+    transition: .5s;
+} */
