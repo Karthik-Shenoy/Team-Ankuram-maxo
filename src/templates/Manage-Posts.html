@@ -79,18 +79,26 @@
 
 
 	<!-- Admin-Content -->
-	<div class = "admin-content">
-		<div class = "button-group">
-			<a href = "/create-post/" class = "btn btn-big">Add Post</a>
-		</div>
+	<div class = "admin-content container">
+		
 
 		<div class="content">
-			<h2 class = "page-title">Manage Posts</h2>
-			<table>
+    <div class="row">
+    <div class='col-lg-8'>
+    <h2 class = "page-title">Manage Posts</h2>
+    </div>
+    <div class="col-lg-4">	
+		<a href='/create-post/'>	<button href = "/create-post/" class = "btn btn-primary" type="link">Add Post</buttton></a>
+    </div>
+    </div>
+		
+			<table class="table table-bordered">
 				<thead>
-					<th>SN</th>
-					<th>title</th>
-					<th colspan="2">Action<th>
+					<th>S.No</th>
+					<th>Title</th>
+          <th>Action</th>
+          <th>Action</th>
+					{% comment %} <th colspan="2">Action<th> {% endcomment %}
 				</thead>
 				<tbody>
 					{% for post in Posts %}
@@ -104,21 +112,6 @@
 
 					{% endfor %}
 
-				<!--
-					<tr>
-						<td>1</td>
-						<td>this is the first post</td>
-						<td><a href = "#" class="edit">Edit</a></td>
-						<td><a href = "#" class = "delete">Delete</a></td>
-					</tr>
-					
-					<tr>
-						<td>2</td>
-						<td>this is the second post</td>
-						<td><a href = "#" class="edit">Edit</a></td>
-						<td><a href = "#" class = "delete">Delete</a></td>
-					</tr> 
-				-->
 				</tbody>
 			</table>
 		</div>
