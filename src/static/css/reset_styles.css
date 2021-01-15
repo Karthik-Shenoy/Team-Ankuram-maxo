@@ -1,3 +1,9 @@
 .page-wrapper {
 	align-items: center;
 }
+
+.sc-container {
+	margin-top: 1.5rem;
+	padding-left: 570px; 
+	padding-bottom: 1.5rem;
+}
