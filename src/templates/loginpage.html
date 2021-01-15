@@ -20,7 +20,7 @@
 
 <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="/postsignin/" method = "POST">
+            <form action="{% url 'login' val='0' %}" method = "POST">
                 {% csrf_token %}
                 <h1>Create Account</h1>
                 <br>
@@ -50,7 +50,7 @@
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="/postsignin/" method="POST">
+            <form action="{% url 'login' val='1' %}" method="POST">
                 {% csrf_token %}
                 <h1>Sign in</h1>
                 {% comment %} <div class="social-container">
@@ -62,7 +62,7 @@
                 <span>Use your account</span>
                 <input type="email" placeholder="Email" name = "signInEmail" />
                 <input type="password" placeholder="Password" name = "signInPassword" />
-                <a href="#">Forgot your password?</a>
+                <a href="/reset-password/">Forgot your password?</a>
                 <br>
                 <button>Sign In</button>
                  {% if messages %}

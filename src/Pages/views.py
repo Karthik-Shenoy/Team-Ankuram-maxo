@@ -134,44 +134,47 @@ def Problem_Solving_View(request, *args, **kwargs):
 def Signin_View(request, *args, **kwargs):
 	return render(request, 'loginpage.html',{})
 
-def Post_Signin_View(request, *args, **kwargs):
+def Post_Signin_View(request, val, *args, **kwargs):
 	#login_code
 	email = request.POST.get('signInEmail')
 	password = request.POST.get('signInPassword')
 	redirect_signin = redirect('/signin/')
 	redirect_home = redirect('/home/')
-	if(email and password):
-		try:
-			user = auth.sign_in_with_email_and_password(email, password)
-		except Exception as e:			
+	print(val, type(val))
+	if(val == "1"):
+		if(email and password):
+			try:
+				user = auth.sign_in_with_email_and_password(email, password)
+			except Exception as e:			
+				messages.error(request, "Invalid credentials", extra_tags = "INVALID_CREDS_SIGNIN")
+				return redirect_signin
+		else:
 			messages.error(request, "Invalid credentials", extra_tags = "INVALID_CREDS_SIGNIN")
 			return redirect_signin
 
-	if email and not password:
-		messages.error(request, "Invalid credentials", extra_tags = "INVALID_CREDS_SIGNIN")
-		return redirect_signin
+	else:
+		#sign_up_code
+		user_name = request.POST.get('userName')
+		new_email = request.POST.get('signUpEmail')
+		new_password = request.POST.get('signUpPassWord')
 
-	#sign_up_code
-	user_name = request.POST.get('userName')
-	new_email = request.POST.get('signUpEmail')
-	new_password = request.POST.get('signUpPassWord')
+		if(new_email and new_password):
+			try:
+				user = auth.create_user_with_email_and_password(new_email, new_password)
 
-	if(new_email and new_password):
-		try:
-			user = auth.create_user_with_email_and_password(new_email, new_password)
+				#adding the user into the database
+				uid = user['localId']
+				data = {u"Name": user_name, u"Status": True, u"Uid":uid}
+				auth.send_email_verification(user['idToken'])
+				Fire_Store.collection(u'Users').document(uid).set(data)
+			except Exception as e:
+				messages.error(request, "Email already exists", extra_tags = "EMAIL_ALREADY_EXISTS")
+				return redirect_signin
 
-			#adding the user into the database
-			uid = user['localId']
-			data = {u"Name": user_name, u"Status": True, u"Uid":uid}
-
-			Fire_Store.collection(u'Users').document(uid).set(data)
-		except Exception as e:
-			messages.error(request, "Email already exists", extra_tags = "EMAIL_ALREADY_EXISTS")
+		if new_email and (not new_password or not user_name):
+			messages.error(request, "Invalid credentials", extra_tags = "INVALID_CREDS_SIGNUP")
 			return redirect_signin
-
-	if new_email and (not new_password or not user_name):
-		messages.error(request, "Invalid credentials", extra_tags = "INVALID_CREDS_SIGNUP")
-		return redirect_signin
+			
 	session_id = user['localId']
 	request.session['uid'] = str(session_id)
 	return redirect_home
@@ -461,3 +464,12 @@ def Create_Post_View(request, *args, **kwargs):
 	# // Posting the Blog #
 
 	return render(request, "Create-Post.html", {"user_name":user_name})
+
+def Reset_Password_View(request, *args, **kwargs):
+	email = request.POST.get("ResetEmail") 
+	try:
+		auth.send_password_reset_email(email)
+		messages.info(request, "Password reset link has been sent to your email address", extra_tags = "RESET_PASSWORD")
+	except:
+		messages.error(request, "Invalid Email address", extra_tags = "INVALID_EMAIL")
+	return render(request, "reset.html", {})

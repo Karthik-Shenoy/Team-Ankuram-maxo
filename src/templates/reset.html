@@ -1,0 +1,133 @@
+{% extends 'layout.html' %}
+{% load static %}
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Site keywords here">
+    <meta name="description" content="">
+    <meta name='copyright' content=''>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
+
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+{% block specif_style  %}
+    <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+  <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl-carousel.css' %}">
+  <link rel="stylesheet" href="{% static 'css/datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/reset_styles.css' %}">
+    
+{% endblock specif_style  %}
+
+{% block content %}
+  
+    <!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+        
+    <!-- header-area -->
+    <header class="header" >
+      
+      <!-- Header Inner -->
+      <div class="header-inner">
+        <div class="container">
+          <div class="inner">
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-12">
+                <!-- Start Logo -->
+                <div class="logo">
+                  {% comment %} <a href="index.html"><img class="img-fluid" src="{% static 'img/Ankuram logo.png' "width=50px" %}"></a> {% endcomment %}
+                </div>
+                <!-- End Logo -->
+                
+              </div>
+              <div class="col-lg-7 col-md-9 col-12">
+                <!-- Main Menu -->
+                <div class="main-menu">
+                  <nav class="navigation">
+                    <ul class="nav menu">
+                      <li><a href="/home/">Home </a></li>
+                      <li><a href="/aptitude/">Aptitude </a></li>
+                      <li><a href="/Problem_Solving/">Coding </a>
+                      </li>
+                      <li><a href="/blog/">Blogs</a>
+                      </li>
+                      <li><a href="/resources/">Resources</a></li>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <!--/ End Main Menu -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+<div id="page-wrapper">
+    <h1>Reset Password</h1>
+    <div class="sc-container">
+        <form action="/reset-password/" method="POST">
+        	{% csrf_token %}
+            <input type="Email" placeholder= "Email" name = "ResetEmail"/>
+            <input type="Submit" placeholder="Get new password"/>
+            <p>Click on submit button to reset your password</p>
+            {% if messages %}
+                    {% for message in messages %}
+			            {% if message.extra_tags == "RESET_PASSWORD" %}
+			                            <p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>
+			            {% elif message.extra_tags == "INVALID_EMAIL" %}
+			            	<p style = "color: #B33A3A; font-weight: bold;">{{message}}</p>
+			            {% endif %}
+			        {% endfor %}
+			{% endif %}
+        </form>
+    </div>
+</div>
+
+ <footer id="footer" class="footer ">
+			
+			<div class="copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-12">
+							<div class="copyright-content">
+								<p>© Copyright 2021  |  All Rights Reserved by Sushiksha|Ankuram </p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Copyright -->
+		</footer>
+
+{% endblock content %}
